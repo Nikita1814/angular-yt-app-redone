@@ -1,1 +1,48 @@
-<p>log-in-page works!</p>
+<div class="main">
+  <form (ngSubmit)="handleSignIn()" [formGroup]="logInForm" class="log-in-form">
+    <div class="input-grp">
+      <label class="block-label" htmlFor="mail"> Login </label>
+      <input
+        id="mail"
+        placeholder="login"
+        type="text"
+        class="input-field"
+        formControlName="mail"
+      />
+      <app-form-error-logger
+        *ngIf="logInForm.get('mail')!.touched"
+        [error]="logInForm.get('mail')!.errors"
+      ></app-form-error-logger>
+    </div>
+
+    <div class="input-grp">
+      <label class="block-label" htmlFor="password"> Password </label>
+      <input
+        id="password"
+        placeholder="password"
+        type="text"
+        class="input-field"
+        formControlName="password"
+      />
+      <app-form-error-logger
+        *ngIf="logInForm.get('password')!.touched"
+        [error]="logInForm.get('password')!.errors"
+      ></app-form-error-logger>
+    </div>
+
+    <div class="form-btns">
+      <input
+        type="submit"
+        value="Sign-in"
+        (click)="handleSignIn()"
+        class="log-in button-blue"
+      />
+      <input
+        type="submit"
+        value="Register"
+        (click)="handleSignIn()"
+        class="log-in button-blue"
+      />
+    </div>
+  </form>
+</div>
