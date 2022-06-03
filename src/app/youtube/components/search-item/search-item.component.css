@@ -1,0 +1,30 @@
+:host {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5%;
+  border-bottom: #2f80ed 5px solid;
+  width: 263px;
+  height: 327px;
+  padding: 10px;
+  background-color: #e5e5e5;
+}
+
+.card-s-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.card-s-img {
+  background-image: url(../../../../assets/caption.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 223px;
+  height: 123px;
+}
+.card-s-more {
+  width: 120px;
+  height: 32px;
+}

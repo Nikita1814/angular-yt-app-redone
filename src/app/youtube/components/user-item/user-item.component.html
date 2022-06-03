@@ -1,1 +1,11 @@
-<p>user-item works!</p>
+<div
+  class="card-s-img"
+  [ngStyle]="{ 'background-image': 'url(' + imgUrl + ')' }"
+></div>
+<div class="card-s-info">
+  <p>{{ userVid.date }}</p>
+</div>
+<h3 class="card-s-name">{{ userVid.title }}</h3>
+<a href="{{ userVid.link }}" target="_blank" class="card-s-more button-blue">
+  More
+</a>

@@ -1,15 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { PageState } from 'src/app/redux/state-related-models';
+import { getUserItems } from 'src/app/redux/user-items-reducer/user-items.selector';
+import { UserCardInfo } from '../../models/yt-models';
+
 
 @Component({
-  selector: 'app-user-cards-page',
-  templateUrl: './user-cards-page.component.html',
-  styleUrls: ['./user-cards-page.component.css']
+  selector: 'app-user-cards',
+  templateUrl: './user-cards.component.html',
+  styleUrls: ['./user-cards.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserCardsPageComponent implements OnInit {
+export class UserCardsComponent {
+  formIsVisible: boolean;
+  userCards: UserCardInfo[];
+  userCards$: Observable<UserCardInfo[]>;
 
-  constructor() { }
+  constructor(private store: Store<PageState>) {}
 
   ngOnInit(): void {
+    this.formIsVisible = false;
+    this.userCards = [];
+    this.userCards$ = this.store.select(getUserItems);
   }
 
+  toggleFormVisibility() {
+    this.formIsVisible = !this.formIsVisible;
+  }
+
+  addCard(card: UserCardInfo) {
+    this.userCards.push(card);
+  }
+
+  handleSubmit(val: UserCardInfo) {
+    this.userCards.push(val);
+    this.toggleFormVisibility();
+  }
 }

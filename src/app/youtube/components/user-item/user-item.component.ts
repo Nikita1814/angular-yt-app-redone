@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
+import { UserCardInfo } from '../../models/yt-models';
+
 
 @Component({
-  selector: 'app-user-item',
-  templateUrl: './user-item.component.html',
-  styleUrls: ['./user-item.component.css']
+  selector: 'app-user-card',
+  templateUrl: './user-card.component.html',
+  styleUrls: ['./user-card.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserItemComponent implements OnInit {
+export class UserCardComponent implements OnInit {
+  @Input() userVid: UserCardInfo;
+  imgUrl: string;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    this.imgUrl = this.userVid.img;
   }
-
 }

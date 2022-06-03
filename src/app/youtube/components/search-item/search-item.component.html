@@ -1,1 +1,24 @@
-<p>search-item works!</p>
+<div
+  class="card-s-img"
+  [ngStyle]="{ 'background-image': 'url(' + imgUrl + ')' }"
+></div>
+<div class="card-s-info">
+  <div class="info-views">
+    <i class="fa-solid fa-eye"></i>{{ vidObj.statistics.viewCount }}
+  </div>
+  <div class="info-likes">
+    <i class="fa-solid fa-heart"></i>{{ vidObj.statistics.likeCount }}
+  </div>
+  <div class="info-comments">
+    <i class="fa-solid fa-comment"></i>{{ vidObj.statistics.commentCount }}
+  </div>
+</div>
+<h3 class="card-s-name">{{ vidObj.snippet.title }}</h3>
+<button
+  id="{{ vidObj.id }}"
+  (click)="selectDetailed()"
+  [routerLink]="['vid', vidObj.id]"
+  class="card-s-more button-blue"
+>
+  More
+</button>
