@@ -13,7 +13,7 @@ import { UserCardInfo } from '../../models/yt-models';
   styleUrls: ['./user-card.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserCardComponent implements OnInit {
+export class UserItemComponent implements OnInit {
   @Input() userVid: UserCardInfo;
   imgUrl: string;
 
