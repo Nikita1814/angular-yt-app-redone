@@ -1,0 +1,29 @@
+:host {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 8vh;
+  padding: 1% 5%;
+}
+
+:host div {
+  margin: 0 10px;
+}
+.filter-input {
+  width: 149px;
+  height: 13px;
+}
+.filter-btn {
+  width: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-form{
+  display: flex;
+  padding: 1% 5%;
+  width:100%;
+  justify-content: space-around;
+}

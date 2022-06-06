@@ -13,6 +13,8 @@ import { UserItemComponent } from './components/user-item/user-item.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchService } from './services/search.service';
+import { WordFilterPipe } from './pipes/word-filter.pipe';
+import { WordSortPipe } from './pipes/word-sort.pipe';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { SearchService } from './services/search.service';
     UserItemComponent,
     FiltersComponent,
     UserItemFormComponent,
-    SearchService
+    SearchService,
+    WordFilterPipe,
+    WordSortPipe
   ],
   imports: [
     CommonModule,

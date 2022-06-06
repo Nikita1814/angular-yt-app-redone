@@ -7,6 +7,8 @@ import { StoreModule } from '@ngrx/store';
 import { searchItemsReducer } from './redux/search-item-reducer/search-item.reducer';
 import { userItemsReducer } from './redux/user-items-reducer/user-items.reducer';
 import { userReducer } from './redux/auth-reducer/auth.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { filtersReducer } from './redux/filters-reducer/filters.reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +19,9 @@ import { userReducer } from './redux/auth-reducer/auth.reducer';
       searchResults: searchItemsReducer,
       userItems: userItemsReducer,
       userData: userReducer,
+      filters:  filtersReducer
     }),
+    EffectsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent],

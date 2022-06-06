@@ -1,16 +1,15 @@
 <app-header ></app-header>
-<app-filtering-criteria
-class="filters"
-></app-filtering-criteria>
 <div class="main">
   <div class="search-list">
+    <ng-container *ngIf="vids$ | async as vids && filters$ | async as filters"  >
     <app-search-item
-      *ngFor="let vid of vids | wordFilter: respService.filterString"
+      *ngFor="let vid of vids | wordFilter: filters.filterBy | wordSort: filters.sortType"
       [vidObj]="vid"
     ></app-search-item>
+  </ng-container>
   </div>
   <h2 *ngIf="vids.length === 0">
-    Type something in an press search to see some cards with info about YT
-    videos
+    Nothing to display, try searching for something
   </h2>
 </div>
+<!--| wordFilter: respService.filterString-->

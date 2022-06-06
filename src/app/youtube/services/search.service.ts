@@ -6,7 +6,7 @@ import { map, switchMap, catchError, tap } from 'rxjs';
 import { throws } from 'assert';
 import { PageState } from 'src/app/redux/state-related-models';
 import { Store } from '@ngrx/store';
-import { updateSearchItems } from 'src/app/redux/search-item-reducer/search-item.action';
+import { updateSearchItems } from 'src/app/redux/search-item-reducer/search-item.actions';
 @Injectable({
   providedIn: 'root',
 })
@@ -25,8 +25,7 @@ export class SearchService {
             `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBY5eUdgQYL-eVEf9Yhr7A-406ScXT2dp8&id=${ids}&part=snippet,statistics`
           )
         ),
-        tap((searchResults) => this.store.dispatch(updateSearchItems({ searchItems: searchResults.items }))
-      )
+        /*tap((searchResults) => this.store.dispatch(updateSearchItems({ searchItems: searchResults.items })))*/
       )
 }
 }

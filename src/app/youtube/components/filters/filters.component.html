@@ -1,1 +1,21 @@
-<p>filters works!</p>
+<!--<p>sorting by</p>
+<div (click)="emitSort('date')" class="filter-btn button-blue">date</div>
+<div (click)="emitSort('views')" class="filter-btn button-blue">views</div>
+<div (click)="emitSort('phrase')" class="filter-btn button-blue">phrase</div>
+<input
+  [(ngModel)]="respService.filterString"
+  class="filter-input"
+  type="text"
+/> -->
+<form (ngSubmit)="handleSubmit()" [formGroup]="cardForm" class="filter-form">
+  <label class="block-label" htmlFor="sortType"> Sorting criteria </label>
+  <select formControlName="sortType" id="sortType">
+    <option value="views">Views</option>
+    <option value="date">Date</option>
+    <option value="likes">Likes</option>
+    <option value="none">None</option>
+  </select>
+  <label class="block-label" htmlFor="filterBy"> Filter by Phrase: </label>
+  <input formControlName="filterBy" type="text" class="filter-input">
+  <input type="submit" value="apply" class="filter-btn button-blue">
+</form>
