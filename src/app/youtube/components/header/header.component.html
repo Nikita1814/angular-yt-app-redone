@@ -1,5 +1,5 @@
 
-<header-main>
+<div class="header-main">
 <div class="header-searchbar">
   <div class="header-filter">
     <div class="header-logo"></div>
@@ -20,16 +20,13 @@
   <a class="button-blue button-m" routerLink="/"> Home </a>
   <a class="button-blue button-m" routerLink="/user-forms"> User Cards </a>
 </div>
-<div (click)="authService.signOut()" class="header-authorization">
+<div (click)="signOut()" class="header-authorization">
   <div class="header-auth-icon"></div>
 <ng-container  *ngIf="user$ | async as user" >
-  <p> user.login || "not logged in" }}</p>
-</ng-container>
-<ng-container  *ngIf="!user$ | async as user" >
-  <p> "not logged in" }}</p>
+  <p> {{ user.login || "not logged in" }}</p>
 </ng-container>
 </div>
-</header-main>
+</div>
 <app-filtering-criteria
 *ngIf ="filtersVisible"
 class="filters"

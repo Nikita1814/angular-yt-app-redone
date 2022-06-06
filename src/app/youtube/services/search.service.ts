@@ -1,9 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, IterableDiffers } from '@angular/core';
-import { isTemplateExpression } from 'typescript';
+import { Injectable } from '@angular/core';
 import { ResponseInt, SearchResponseInt } from '../models/yt-models';
 import { map, switchMap, catchError, tap } from 'rxjs';
-import { throws } from 'assert';
 import { PageState } from 'src/app/redux/state-related-models';
 import { Store } from '@ngrx/store';
 import { updateSearchItems } from 'src/app/redux/search-item-reducer/search-item.actions';
@@ -11,7 +9,8 @@ import { updateSearchItems } from 'src/app/redux/search-item-reducer/search-item
   providedIn: 'root',
 })
 export class SearchService {
-  constructor(private http: HttpClient, private store: Store<PageState> ) {}
+
+  constructor(private http: HttpClient) {}
 
   makeSearch(query: string) {
     return this.http
@@ -24,8 +23,8 @@ export class SearchService {
           this.http.get<ResponseInt>(
             `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBY5eUdgQYL-eVEf9Yhr7A-406ScXT2dp8&id=${ids}&part=snippet,statistics`
           )
-        ),
+        )
         /*tap((searchResults) => this.store.dispatch(updateSearchItems({ searchItems: searchResults.items })))*/
-      )
-}
+      );
+  }
 }

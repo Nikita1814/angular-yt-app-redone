@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormErrorLoggerComponent } from './components/error-logger/error-logger.component';
+import { ErrorLoggerComponent } from './components/error-logger/error-logger.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputAndErrorComponent } from './components/input-and-error/input-and-error.component';
 
@@ -8,13 +8,13 @@ import { InputAndErrorComponent } from './components/input-and-error/input-and-e
 
 @NgModule({
   declarations: [
-    FormErrorLoggerComponent,
+    ErrorLoggerComponent,
     InputAndErrorComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule
   ],
-  exports: [FormErrorLoggerComponent, InputAndErrorComponent]
+  exports: [ErrorLoggerComponent, InputAndErrorComponent]
 })
 export class SharedModule { }

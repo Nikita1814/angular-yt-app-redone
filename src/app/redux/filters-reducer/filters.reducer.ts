@@ -4,7 +4,7 @@ import { ResponseVidInt } from 'src/app/youtube/models/yt-models';
 import { updateFilter, updateFilters, updateSortType } from './filters.actions';
 
 export interface FiltersState {
-  sortType: string;
+  sortType: "date" | "views" | "likes" | "none";
   filterBy: string;
 }
 

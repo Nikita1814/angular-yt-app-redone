@@ -1,12 +1,12 @@
-<app-header ></app-header>
+<app-header></app-header>
 <div class="main">
   <div class="search-list">
-    <ng-container *ngIf="vids$ | async as vids && filters$ | async as filters"  >
-    <app-search-item
-      *ngFor="let vid of vids | wordFilter: filters.filterBy | wordSort: filters.sortType"
-      [vidObj]="vid"
-    ></app-search-item>
-  </ng-container>
+    <ng-container *ngIf="vids$ | async as vids ">
+      <ng-container *ngIf="filters$ | async as filters">
+        <app-search-item *ngFor="let vid of vids | wordFilter: filters.filterBy | wordSort: filters.sortType"
+          [vidObj]="vid"></app-search-item>
+      </ng-container>
+    </ng-container>
   </div>
   <h2 *ngIf="vids.length === 0">
     Nothing to display, try searching for something

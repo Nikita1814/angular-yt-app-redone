@@ -14,13 +14,13 @@ import { ResponseVidInt } from '../../models/yt-models';
 })
 export class SearchPageComponent implements OnInit {
   vids!: ResponseVidInt[]
-  $vids: Observable<ResponseVidInt[]>
-  $filters: Observable<FiltersState>
+  vids$: Observable<ResponseVidInt[]>
+  filters$: Observable<FiltersState>
   constructor(private store: Store<PageState>) { }
 
   ngOnInit(): void {
-    this.$vids = this.store.select(getSearchItems)
-    this.$filters = this.store.select(getFilters)
+    this.vids$ = this.store.select(getSearchItems)
+    this.filters$ = this.store.select(getFilters)
   }
 
 }

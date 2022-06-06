@@ -7,7 +7,7 @@
   [formControl]="c"
 />
 
-<app-form-error-logger
+<app-error-logger
   *ngIf="errorsObj && isTouched"
   [error]="getMsg()"
-></app-form-error-logger>
+></app-error-logger>

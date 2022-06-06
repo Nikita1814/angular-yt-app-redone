@@ -11,6 +11,7 @@ import { Store } from '@ngrx/store';
 import { Observable, ObservableInput } from 'rxjs';
 import { User } from 'src/app/auth/models/auth-models';
 import { getUser } from 'src/app/redux/auth-reducer/auth.selector';
+import { initiateSearch } from 'src/app/redux/search-item-reducer/search-item.actions';
 import { PageState } from 'src/app/redux/state-related-models';
 import { getUserItems } from 'src/app/redux/user-items-reducer/user-items.selector';
 /*import { AuthService } from 'src/app/auth/auth.service';
@@ -51,7 +52,7 @@ export class HeaderComponent implements OnInit {
   submitSearch() {
     /*this.respService.makeSearchQuery(this.searchString))*/
     /*this.respService.makeSearchQuery(this.searchString).subscribe();*/
-    this.initSearch.emit(this.searchString);
-
+    /*this.initSearch.emit(this.searchString);*/
+    this.store.dispatch(initiateSearch({ searchQuery: this.searchString }))
   }
 }

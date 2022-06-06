@@ -16,8 +16,8 @@ import sortFuncs from '../../../core/utils/sort-funcs';*/
 
 @Component({
   selector: 'app-filtering-criteria',
-  templateUrl: './filtering-criteria.component.html',
-  styleUrls: ['./filtering-criteria.component.css'],
+  templateUrl: './filters.component.html',
+  styleUrls: ['./filters.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class FiltersComponent implements OnInit {
@@ -44,7 +44,7 @@ export class FiltersComponent implements OnInit {
   emitSort(sort: string) {
     //this.updateSort.emit(this.sortFuncs[sort]);
   }
-  handleSumbit(){
+  handleSubmit(){
    this.store.dispatch(updateFilters(this.filterForm.value as FiltersState))
   }
 }

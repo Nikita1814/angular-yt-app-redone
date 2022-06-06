@@ -17,7 +17,7 @@ export class AuthReqGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       const userCards$ = this.store.select(getUser);
-      if (!userCards$.subscribe((u: User) => u.token)) {
+      if (userCards$.subscribe((u: User | null ) => u === null )) {
         this.router.navigate(['auth/']);
         return false;
       } else {

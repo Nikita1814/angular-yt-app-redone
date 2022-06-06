@@ -16,9 +16,9 @@ import { UserCardInfo } from '../../models/yt-models';
 
 
 @Component({
-  selector: 'app-user-card-form',
-  templateUrl: './user-card-form.component.html',
-  styleUrls: ['./user-card-form.component.css'],
+  selector: 'app-user-item-form',
+  templateUrl: './user-item-form.component.html',
+  styleUrls: ['./user-item-form.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserItemFormComponent {
@@ -77,7 +77,7 @@ export class UserItemFormComponent {
 
   handleSubmit() {
     if (this.cardForm.valid) {
-      this.formSubmission.emit(this.cardForm.value as UserCardInfo);
+      /*this.formSubmission.emit(this.cardForm.value as UserCardInfo);*/
       this.store.dispatch(
         updateUserItems({userItem: this.cardForm.value as UserCardInfo})
       );

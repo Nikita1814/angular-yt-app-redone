@@ -1,9 +1,9 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { User } from 'src/app/auth/models/auth-models';
 
-const userSelector = createFeatureSelector<User | null>('user');
+const userSelector = createFeatureSelector<User>('userData');
 
 export const getUser = createSelector(
   userSelector,
-  (state: User | null) => state
+  (state: User ) => state
 );

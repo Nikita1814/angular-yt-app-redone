@@ -4,7 +4,7 @@ import { FiltersState } from "./filters.reducer";
 
 export const updateSortType = createAction(
   '[Filters] Sort Type Update ',
-  props<{ sortType: string }>()
+  props<{ sortType: "date" | "views" | "likes" | "none"  }>()
 );
 
 export const updateFilter = createAction(

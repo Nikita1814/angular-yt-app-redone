@@ -7,7 +7,7 @@
   class="filter-input"
   type="text"
 /> -->
-<form (ngSubmit)="handleSubmit()" [formGroup]="cardForm" class="filter-form">
+<form (ngSubmit)="handleSubmit()" [formGroup]="filterForm" class="filter-form">
   <label class="block-label" htmlFor="sortType"> Sorting criteria </label>
   <select formControlName="sortType" id="sortType">
     <option value="views">Views</option>

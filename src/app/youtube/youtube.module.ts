@@ -8,33 +8,38 @@ import { SearchItemComponent } from './components/search-item/search-item.compon
 
 import { FiltersComponent } from './components/filters/filters.component';
 import { UserItemFormComponent } from './components/user-item-form/user-item-form.component';
-import { UserCardsComponent } from './pages/user-cards-page/user-cards-page.component';
+import { UserCardsPageComponent } from './pages/user-cards-page/user-cards-page.component';
 import { UserItemComponent } from './components/user-item/user-item.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchService } from './services/search.service';
 import { WordFilterPipe } from './pipes/word-filter.pipe';
 import { WordSortPipe } from './pipes/word-sort.pipe';
+import { YoutubeRoutingModule } from './youtube-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [
     SearchPageComponent,
-    UserCardsComponent,
+    UserCardsPageComponent,
     DetailedVideoPageComponent,
     HeaderComponent,
     SearchItemComponent,
     UserItemComponent,
     FiltersComponent,
     UserItemFormComponent,
-    SearchService,
     WordFilterPipe,
     WordSortPipe
   ],
   imports: [
     CommonModule,
-    BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    YoutubeRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class YoutubeModule { }

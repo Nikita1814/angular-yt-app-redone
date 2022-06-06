@@ -5,14 +5,13 @@ import { PageState } from 'src/app/redux/state-related-models';
 import { getUserItems } from 'src/app/redux/user-items-reducer/user-items.selector';
 import { UserCardInfo } from '../../models/yt-models';
 
-
 @Component({
-  selector: 'app-user-cards',
-  templateUrl: './user-cards.component.html',
-  styleUrls: ['./user-cards.component.css'],
+  selector: 'app-user-cards-page',
+  templateUrl: './user-cards-page.component.html',
+  styleUrls: ['./user-cards-page.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserCardsComponent {
+export class UserCardsPageComponent {
   formIsVisible: boolean;
   userCards: UserCardInfo[];
   userCards$: Observable<UserCardInfo[]>;
@@ -33,8 +32,8 @@ export class UserCardsComponent {
     this.userCards.push(card);
   }
 
-  handleSubmit(val: UserCardInfo) {
+  /*handleSubmit(val: UserCardInfo) {
     this.userCards.push(val);
     this.toggleFormVisibility();
-  }
+  }*/
 }
