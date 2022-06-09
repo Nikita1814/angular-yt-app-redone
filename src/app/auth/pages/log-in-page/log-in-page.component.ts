@@ -29,6 +29,7 @@ export class LogInPageComponent implements OnInit {
   ngOnInit(): void {}
   handleSignIn() {
     if (this.logInForm.valid) {
+      console.log('form is valid')
       this.store.dispatch(
         updateUser({ user: { ...this.logInForm.value, token: 'I am a token' } })
       );

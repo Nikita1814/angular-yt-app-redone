@@ -4,6 +4,7 @@ import {
   OnInit,
   Output,
   EventEmitter,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Store } from '@ngrx/store';
@@ -19,6 +20,7 @@ import sortFuncs from '../../../core/utils/sort-funcs';*/
   templateUrl: './filters.component.html',
   styleUrls: ['./filters.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FiltersComponent implements OnInit {
   /*@Output() updateSort = new EventEmitter<

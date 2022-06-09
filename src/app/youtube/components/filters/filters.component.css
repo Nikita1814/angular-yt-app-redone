@@ -13,7 +13,8 @@
 }
 .filter-input {
   width: 149px;
-  height: 13px;
+  height:20px;
+  margin:1%;
 }
 .filter-btn {
   width: 70px;
@@ -26,4 +27,10 @@
   padding: 1% 5%;
   width:100%;
   justify-content: space-around;
+  align-items: center;
 }
+
+.input-grp{
+flex-direction: row;
+}
+

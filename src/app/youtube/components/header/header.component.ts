@@ -5,6 +5,7 @@ import {
   OnInit,
   Output,
   EventEmitter,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -23,6 +24,7 @@ import { ResponseManagementService } from '../../services/response-management.se
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
   searchString!: string;
@@ -53,6 +55,7 @@ export class HeaderComponent implements OnInit {
     /*this.respService.makeSearchQuery(this.searchString))*/
     /*this.respService.makeSearchQuery(this.searchString).subscribe();*/
     /*this.initSearch.emit(this.searchString);*/
+    console.log('search submitted with', this.searchString)
     this.store.dispatch(initiateSearch({ searchQuery: this.searchString }))
   }
 }

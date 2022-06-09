@@ -8,14 +8,18 @@
   type="text"
 /> -->
 <form (ngSubmit)="handleSubmit()" [formGroup]="filterForm" class="filter-form">
+  <div class="input-grp">
   <label class="block-label" htmlFor="sortType"> Sorting criteria </label>
-  <select formControlName="sortType" id="sortType">
+  <select formControlName="sortType" id="sortType" class="filter-input">
     <option value="views">Views</option>
     <option value="date">Date</option>
     <option value="likes">Likes</option>
     <option value="none">None</option>
   </select>
+</div>
+<div class="input-grp">
   <label class="block-label" htmlFor="filterBy"> Filter by Phrase: </label>
   <input formControlName="filterBy" type="text" class="filter-input">
   <input type="submit" value="apply" class="filter-btn button-blue">
+</div>
 </form>

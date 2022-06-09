@@ -6,10 +6,11 @@
         <app-search-item *ngFor="let vid of vids | wordFilter: filters.filterBy | wordSort: filters.sortType"
           [vidObj]="vid"></app-search-item>
       </ng-container>
+      <h2 *ngIf="vids.length === 0">
+        Nothing to display, try searching for something
+      </h2>
     </ng-container>
   </div>
-  <h2 *ngIf="vids.length === 0">
-    Nothing to display, try searching for something
-  </h2>
+
 </div>
 <!--| wordFilter: respService.filterString-->

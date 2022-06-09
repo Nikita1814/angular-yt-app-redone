@@ -3,14 +3,14 @@
     <app-input-and-error
       [type]="'email'"
       [title]="'Login'"
-      [id]="'mail'"
-      [controlName]="'mail'"
-      [errorsObj]="logInForm.get('mail')!.errors"
+      [id]="'login'"
+      [controlName]="'login'"
+      [errorsObj]="logInForm.get('login')!.errors"
       [errorMsgs]="{
         required: 'Please enter an email',
         email: 'Email is invalid'
       }"
-      [isTouched]="logInForm.get('mail')!.touched"
+      [isTouched]="logInForm.get('login')!.touched"
     ></app-input-and-error>
 
     <app-input-and-error
