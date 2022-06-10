@@ -49,7 +49,7 @@ export class UserItemFormComponent {
     img: [
       '',
       {
-        validators: [ValidateImgLink],
+        validators: [Validators.required, ValidateImgLink],
         updateOn: 'change',
       },
     ],
@@ -57,6 +57,7 @@ export class UserItemFormComponent {
       '',
       {
         validators: [
+          Validators.required,
           Validators.pattern(
             /http(?:s?):\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?‌​[\w\?‌​=]*)?/
           ),
@@ -77,10 +78,10 @@ export class UserItemFormComponent {
 
   handleSubmit() {
     if (this.cardForm.valid) {
-      /*this.formSubmission.emit(this.cardForm.value as UserCardInfo);*/
       this.store.dispatch(
         updateUserItems({userItem: this.cardForm.value as UserCardInfo})
       );
+      this.exitForm()
     }
   }
 

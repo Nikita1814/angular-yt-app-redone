@@ -26,20 +26,7 @@ export class AuthReqGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-      /*let isLoggedIn: boolean
-      this.user$.subscribe((u: User | null) => {
-        if (u){
-          isLoggedIn = true
-        }
-      } )*/
-    /*const userCards$ = this.store.select(getUser);
-      if (userCards$.subscribe((u: User | null ) => u === null )) {
-        this.router.navigate(['auth/']);
-        return false;
-      } else {
-        console.log('user is' )
-        return true;
-      }*/
+
       let isLoggedIn: boolean = false
       this.user$.subscribe((u: User | null) => {
         if (u?.token){
@@ -51,7 +38,4 @@ export class AuthReqGuard implements CanActivate {
       })
       return isLoggedIn
   }
-  /*canNavigate(): Observable<bo>{
-
-}*/
 }
