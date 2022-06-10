@@ -61,6 +61,7 @@
   background-image: url(../../../../assets/search_settings.svg);
   background-repeat: no-repeat;
   background-size: contain;
+  border: none;
 }
 
 .header-authorization {

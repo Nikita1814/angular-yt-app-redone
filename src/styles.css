@@ -83,3 +83,11 @@ input.ng-touched.ng-invalid {
 .error-msg {
   color: darkred;
 }
+
+a{
+  text-decoration: none;
+}
+button{
+  border: none;
+  box-shadow: none;
+}
