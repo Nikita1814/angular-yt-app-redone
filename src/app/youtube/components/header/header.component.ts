@@ -1,4 +1,4 @@
-import { outputAst } from '@angular/compiler';
+
 import {
   Component,
   ViewEncapsulation,
@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable, ObservableInput } from 'rxjs';
 import { User } from 'src/app/auth/models/auth-models';
+import { logOut, updateUser } from 'src/app/redux/auth-reducer/auth.action';
 import { getUser } from 'src/app/redux/auth-reducer/auth.selector';
 import { initiateSearch } from 'src/app/redux/search-item-reducer/search-item.actions';
 import { PageState } from 'src/app/redux/state-related-models';
@@ -49,6 +50,7 @@ export class HeaderComponent implements OnInit {
   signOut() {
     /*this.authService.signOut();
     this.user = this.authService.user;*/
+    this.store.dispatch(logOut());
   }
 
   submitSearch() {

@@ -20,10 +20,12 @@ import { ResponseManagementService } from '../../services/response-management.se
 export class SearchItemComponent implements OnInit {
   @Input() vidObj: ResponseVidInt;
   imgUrl: string;
+  stringifiedVidObj: string
   constructor(/*public respService: ResponseManagementService*/) {}
 
   ngOnInit(): void {
     this.imgUrl = this.vidObj.snippet.thumbnails.high.url;
+    this.stringifiedVidObj = JSON.stringify(this.vidObj)
   }
 
   selectDetailed() {

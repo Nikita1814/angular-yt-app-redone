@@ -14,11 +14,12 @@
   </div>
 </div>
 <h3 class="card-s-name">{{ vidObj.snippet.title }}</h3>
-<button
+<a
   id="{{ vidObj.id }}"
   (click)="selectDetailed()"
   [routerLink]="['vid', vidObj.id]"
+  [state]="{ data: vidObj }"
   class="card-s-more button-blue"
 >
   More
-</button>
+</a>
