@@ -1,7 +1,4 @@
-<div
-  class="card-s-img"
-  [ngStyle]="{ 'background-image': 'url(' + imgUrl + ')' }"
-></div>
+<img class="card-s-img" [src]="imgUrl"></img>
 <div class="card-s-info">
   <div class="info-views">
     <i class="fa-solid fa-eye"></i>{{ vidObj.statistics.viewCount }}
@@ -14,12 +11,7 @@
   </div>
 </div>
 <h3 class="card-s-name">{{ vidObj.snippet.title }}</h3>
-<a
-  id="{{ vidObj.id }}"
-  (click)="selectDetailed()"
-  [routerLink]="['vid', vidObj.id]"
-  [state]="{ data: vidObj }"
-  class="card-s-more button-blue"
->
+<a id="{{ vidObj.id }}" (click)="selectDetailed()" [routerLink]="['vid', vidObj.id]" [state]="{ data: vidObj }"
+  class="card-s-more button-blue">
   More
 </a>

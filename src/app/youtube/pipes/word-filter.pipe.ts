@@ -1,7 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { ResponseVidInt } from '../models/yt-models';
 
-
 @Pipe({
   name: 'wordFilter',
 })

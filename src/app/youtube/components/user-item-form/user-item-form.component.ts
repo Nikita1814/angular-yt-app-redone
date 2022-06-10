@@ -9,11 +9,10 @@ import {
 import { Validators, FormBuilder } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { PageState } from 'src/app/redux/state-related-models';
-import { updateUserItems } from 'src/app/redux/user-items-reducer/user-items.action';
-import { ValidateDate } from 'src/app/shared/valiidators/date.validator';
-import { ValidateImgLink } from 'src/app/shared/valiidators/img-link.validator';
+import { updateUserItems } from 'src/app/redux/user-items-reducer/user-items.actions';
+import { ValidateDate } from 'src/app/shared/validators/date.validator';
+import { ValidateImgLink } from 'src/app/shared/validators/img-link.validator';
 import { UserCardInfo } from '../../models/yt-models';
-
 
 @Component({
   selector: 'app-user-item-form',
@@ -79,9 +78,9 @@ export class UserItemFormComponent {
   handleSubmit() {
     if (this.cardForm.valid) {
       this.store.dispatch(
-        updateUserItems({userItem: this.cardForm.value as UserCardInfo})
+        updateUserItems({ userItem: this.cardForm.value as UserCardInfo })
       );
-      this.exitForm()
+      this.exitForm();
     }
   }
 

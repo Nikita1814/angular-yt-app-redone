@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable, ObservableInput } from 'rxjs';
 import { User } from 'src/app/auth/models/auth-models';
-import { logOut, updateUser } from 'src/app/redux/auth-reducer/auth.action';
+import { logOut, updateUser } from 'src/app/redux/auth-reducer/auth.actions';
 import { getUser } from 'src/app/redux/auth-reducer/auth.selector';
 import { initiateSearch } from 'src/app/redux/search-item-reducer/search-item.actions';
 import { PageState } from 'src/app/redux/state-related-models';

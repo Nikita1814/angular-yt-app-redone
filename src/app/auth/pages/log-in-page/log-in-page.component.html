@@ -1,41 +1,21 @@
 <div class="main">
   <form (ngSubmit)="handleSignIn()" [formGroup]="logInForm" class="log-in-form">
-    <app-input-and-error
-      [type]="'email'"
-      [title]="'Login'"
-      [id]="'login'"
-      [controlName]="'login'"
-      [errorsObj]="logInForm.get('login')!.errors"
-      [errorMsgs]="{
+    <app-input-and-error [type]="'email'" [title]="'Login'" [id]="'login'" [controlName]="'login'"
+      [errorsObj]="logInForm.get('login')!.errors" [errorMsgs]="{
         required: 'Please enter an email',
         email: 'Email is invalid'
-      }"
-      [isTouched]="logInForm.get('login')!.touched"
-    ></app-input-and-error>
+      }" [isTouched]="logInForm.get('login')!.touched"></app-input-and-error>
 
-    <app-input-and-error
-      [type]="'password'"
-      [title]="'Password'"
-      [id]="'password'"
-      [controlName]="'password'"
-      [errorsObj]="logInForm.get('password')!.errors"
-      [errorMsgs]="{
+    <app-input-and-error [type]="'password'" [title]="'Password'" [id]="'password'" [controlName]="'password'"
+      [errorsObj]="logInForm.get('password')!.errors" [errorMsgs]="{
         required: 'Please enter a password',
         pattern:
           'Your password is not strong enough,the passsword must contain at least 8 characters including: uppercase, lowercase, letters, numbers, special characters (! @ # ? )'
-      }"
-      [isTouched]="logInForm.get('password')!.touched"
-    ></app-input-and-error>
+      }" [isTouched]="logInForm.get('password')!.touched"></app-input-and-error>
 
     <div class="form-btns">
-      <input
-        [disabled]="!logInForm.valid"
-        type="submit"
-        value="Sign-in"
-        (click)="handleSignIn()"
-        class="log-in button-blue"
-        disabled=""
-      />
+      <input [disabled]="!logInForm.valid" type="submit" value="Sign-in" (click)="handleSignIn()"
+        class="log-in button-blue" disabled="" />
     </div>
   </form>
 </div>

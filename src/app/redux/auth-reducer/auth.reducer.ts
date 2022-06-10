@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { User } from 'src/app/auth/models/auth-models';
-import { logOut, updateUser } from './auth.action';
+import { logOut, updateUser } from './auth.actions';
 
 export const initialState: User | {} = {};
 

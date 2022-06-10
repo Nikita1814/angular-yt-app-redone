@@ -1,13 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {
-  FormControl,
-  FormGroup,
   FormBuilder,
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { updateUser } from 'src/app/redux/auth-reducer/auth.action';
+import { updateUser } from 'src/app/redux/auth-reducer/auth.actions';
 import { PageState } from 'src/app/redux/state-related-models';
 @Component({
   selector: 'app-log-in-page',
@@ -22,8 +20,16 @@ export class LogInPageComponent implements OnInit {
     private router: Router
   ) {}
   logInForm = this.fb.group({
-    login: ['', { validators:  [Validators.required, Validators.email] }],
-    password: ['', { validators: [Validators.required, Validators.pattern(/[A-Za-z0-9!@#?]/)] }],
+    login: ['', { validators: [Validators.required, Validators.email] }],
+    password: [
+      '',
+      {
+        validators: [
+          Validators.required,
+          Validators.pattern(/[A-Za-z0-9!@#?]/),
+        ],
+      },
+    ],
   });
 
   ngOnInit(): void {}
