@@ -5,8 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { InputAndErrorComponent } from './components/input-and-error/input-and-error.component';
 import { AvatarSelectInputComponent } from './avatar-select-input/avatar-select-input.component';
 
-
-
 @NgModule({
   declarations: [
     ErrorLoggerComponent,

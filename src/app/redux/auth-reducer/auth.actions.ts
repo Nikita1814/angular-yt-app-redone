@@ -6,6 +6,4 @@ export const updateUser = createAction(
   props<{ user: User }>()
 );
 
-export const logOut = createAction(
-  '[ Header ] Logout'
-)
+export const logOut = createAction('[ Header ] Logout');

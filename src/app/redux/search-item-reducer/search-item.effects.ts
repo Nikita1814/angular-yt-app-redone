@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-
-import { map, exhaustMap, catchError } from 'rxjs/operators';
+import { map, exhaustMap } from 'rxjs/operators';
 import { ResponseInt } from 'src/app/youtube/models/yt-models';
-
 import { SearchService } from 'src/app/youtube/services/search.service';
 import { initiateSearch, updateSearchItems } from './search-item.actions';
 

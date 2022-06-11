@@ -1,21 +1,16 @@
-import { ImplicitReceiver } from '@angular/compiler';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, ValidationErrors, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { updateUser } from 'src/app/redux/auth-reducer/auth.actions';
-import { PageState } from 'src/app/redux/state-related-models';
+
 @Component({
   selector: 'app-log-in-page',
   templateUrl: './log-in-page.component.html',
   styleUrls: ['./log-in-page.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LogInPageComponent implements OnInit{
-
+export class LogInPageComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private store: Store,
@@ -32,7 +27,7 @@ export class LogInPageComponent implements OnInit{
         ],
       },
     ],
-    avatar:['avatar-x']
+    avatar: ['avatar-x'],
   });
 
   handleSignIn() {
@@ -43,7 +38,14 @@ export class LogInPageComponent implements OnInit{
       this.router.navigateByUrl('');
     }
   }
- ngOnInit(): void {
-   console.log('storage', localStorage)
- }
+  getErrorMsg(
+    errorObj: ValidationErrors | null,
+    errorMsgs: { [kind: string]: string }
+  ) {
+    return errorObj && errorMsgs
+      ? errorMsgs[`${Object.keys(errorObj)[0]}`]
+      : '';
+  }
+  ngOnInit(): void {
+  }
 }

@@ -6,15 +6,13 @@ import { SharedModule } from '../shared/shared.module';
 import { AuthRoutingModule } from './auth-routing.module';
 
 @NgModule({
-  declarations: [
-    LogInPageComponent
-  ],
+  declarations: [LogInPageComponent],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    AuthRoutingModule
-  ]
+    AuthRoutingModule,
+  ],
 })
-export class AuthModule { }
+export class AuthModule {}

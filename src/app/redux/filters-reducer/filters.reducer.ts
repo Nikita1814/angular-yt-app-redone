@@ -1,6 +1,4 @@
-import { state } from '@angular/animations';
 import { createReducer, on } from '@ngrx/store';
-import { ResponseVidInt } from 'src/app/youtube/models/yt-models';
 import { updateFilter, updateFilters, updateSortType } from './filters.actions';
 
 export interface FiltersState {

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ErrorLoggerComponent } from './error-logger.component';
 
 describe('ErrorLoggerComponent', () => {
@@ -8,9 +7,8 @@ describe('ErrorLoggerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ErrorLoggerComponent ]
-    })
-    .compileComponents();
+      declarations: [ErrorLoggerComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

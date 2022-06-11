@@ -1,4 +1,5 @@
-import { ResponseVidInt } from "../models/yt-models";
+import { ResponseVidInt } from '../models/yt-models';
+
 const sortFuncs = {
   date: (a: ResponseVidInt, b: ResponseVidInt): number => {
     const dOne = new Date(a.snippet.publishedAt).getTime();

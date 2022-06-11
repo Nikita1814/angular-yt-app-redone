@@ -1,7 +1,6 @@
 import {
   Component,
   ViewEncapsulation,
-  OnInit,
   ChangeDetectionStrategy,
 } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
@@ -28,9 +27,6 @@ export class FiltersComponent {
 
   })
 
-  emitSort(sort: string) {
-    //this.updateSort.emit(this.sortFuncs[sort]);
-  }
   handleSubmit(){
    this.store.dispatch(updateFilters(this.filterForm.value as FiltersState))
   }

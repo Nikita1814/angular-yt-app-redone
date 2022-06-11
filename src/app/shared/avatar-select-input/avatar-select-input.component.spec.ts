@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AvatarSelectInputComponent } from './avatar-select-input.component';
 
 describe('AvatarSelectInputComponent', () => {
@@ -8,9 +7,8 @@ describe('AvatarSelectInputComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AvatarSelectInputComponent ]
-    })
-    .compileComponents();
+      declarations: [AvatarSelectInputComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

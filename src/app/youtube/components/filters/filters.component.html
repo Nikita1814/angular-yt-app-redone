@@ -1,12 +1,3 @@
-<!--<p>sorting by</p>
-<div (click)="emitSort('date')" class="filter-btn button-blue">date</div>
-<div (click)="emitSort('views')" class="filter-btn button-blue">views</div>
-<div (click)="emitSort('phrase')" class="filter-btn button-blue">phrase</div>
-<input
-  [(ngModel)]="respService.filterString"
-  class="filter-input"
-  type="text"
-/> -->
 <form (ngSubmit)="handleSubmit()" [formGroup]="filterForm" class="filter-form">
   <div class="input-grp">
   <label class="block-label" htmlFor="sortType"> Sorting criteria </label>

@@ -17,15 +17,12 @@ import { ResponseVidInt } from '../../models/yt-models';
 export class SearchItemComponent implements OnInit {
   @Input() vidObj: ResponseVidInt;
   imgUrl: string;
-  stringifiedVidObj: string
+  stringifiedVidObj: string;
   constructor() {}
 
   ngOnInit(): void {
     this.imgUrl = this.vidObj.snippet.thumbnails.high.url;
-    this.stringifiedVidObj = JSON.stringify(this.vidObj)
+    this.stringifiedVidObj = JSON.stringify(this.vidObj);
   }
 
-  selectDetailed() {
-    /*this.respService.selectedVid = this.vidObj;*/
-  }
 }

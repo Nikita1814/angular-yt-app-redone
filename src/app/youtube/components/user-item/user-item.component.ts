@@ -6,7 +6,6 @@ import {
 } from '@angular/core';
 import { UserCardInfo } from '../../models/yt-models';
 
-
 @Component({
   selector: 'app-user-item',
   templateUrl: './user-item.component.html',

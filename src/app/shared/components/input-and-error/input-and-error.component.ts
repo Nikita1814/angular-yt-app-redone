@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input, ViewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  ViewChild,
+} from '@angular/core';
 import {
   ControlContainer,
   ControlValueAccessor,
@@ -19,7 +24,7 @@ import {
       multi: true,
     },
   ],
-  changeDetection:ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputAndErrorComponent implements ControlValueAccessor {
   @Input() type!: string;
@@ -39,7 +44,7 @@ export class InputAndErrorComponent implements ControlValueAccessor {
       this.errorMsg =
         this.errorMsgs[`${Object.keys(this.errorsObj)[0]}`] || null;
   }
-  
+
   getMsg(): string {
     return this.errorsObj && this.errorMsgs
       ? this.errorMsgs[`${Object.keys(this.errorsObj)[0]}`]

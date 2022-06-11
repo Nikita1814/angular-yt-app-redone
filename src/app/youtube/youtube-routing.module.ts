@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DetailedVideoPageComponent } from './pages/detailed-video-page/detailed-video-page.component';
-
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { UserItemsPageComponent } from './pages/user-items-page/user-items-page.component';
 

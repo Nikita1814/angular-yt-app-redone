@@ -1,13 +1,13 @@
-.avatar-list{
-  display:flex;
-  justify-content:space-between;
+.avatar-list {
+  display: flex;
+  justify-content: space-between;
   max-width: 300px;
 }
-.avatar{
-  width:70px;
-  height:70px;
+.avatar {
+  width: 70px;
+  height: 70px;
 }
-.selected{
-  border:5px solid #2f80ed;
+.selected {
+  border: 5px solid #2f80ed;
   border-radius: 50%;
 }

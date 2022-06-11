@@ -77,8 +77,8 @@ export class UserItemFormComponent {
     if (this.cardForm.valid) {
       const userItem = {
         ...this.cardForm.value,
-        id: `${Date.now()}`
-      }
+        id: `${Date.now()}`,
+      };
       this.store.dispatch(
         updateUserItems({ userItem: this.cardForm.value as UserCardInfo })
       );

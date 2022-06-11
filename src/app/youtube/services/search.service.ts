@@ -6,7 +6,6 @@ import { map, switchMap } from 'rxjs';
   providedIn: 'root',
 })
 export class SearchService {
-
   constructor(private http: HttpClient) {}
 
   makeSearch(query: string) {

@@ -3,7 +3,6 @@ import {
   Component,
   forwardRef,
   Input,
-  OnInit,
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -32,7 +31,6 @@ export class AvatarSelectInputComponent {
   selectAvatar(avatar: string) {
     this.onTouched();
     this.selected = avatar;
-    console.log(this.selected);
     this.onChanged(avatar);
   }
 

@@ -1,4 +1,4 @@
-<img class="card-s-img" [src]="imgUrl"/>
+<img class="card-s-img" [src]="imgUrl" />
 <div class="card-s-info">
   <div class="info-views">
     <i class="fa-solid fa-eye"></i>{{ vidObj.statistics.viewCount }}
@@ -11,7 +11,7 @@
   </div>
 </div>
 <h3 class="card-s-name">{{ vidObj.snippet.title }}</h3>
-<a id="{{ vidObj.id }}" (click)="selectDetailed()" [routerLink]="['vid', vidObj.id]" [state]="{ data: vidObj }"
+<a id="{{ vidObj.id }}" [routerLink]="['vid', vidObj.id]" [state]="{ data: vidObj }"
   class="card-s-more button-blue">
   More
 </a>

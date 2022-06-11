@@ -8,6 +8,5 @@ export const updateSearchItems = createAction(
 
 export const initiateSearch = createAction(
   '[Search Results Page] Initiate Yt Search ',
-  props<{ searchQuery: string}>()
-)
-
+  props<{ searchQuery: string }>()
+);

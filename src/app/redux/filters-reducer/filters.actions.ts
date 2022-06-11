@@ -1,5 +1,4 @@
 import { createAction, props } from '@ngrx/store';
-import { FiltersState } from './filters.reducer';
 
 export const updateSortType = createAction(
   '[Filters] Sort Type Update ',
