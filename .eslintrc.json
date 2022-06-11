@@ -48,16 +48,7 @@
         "rxjs/no-cyclic-action": "error",
         "rxjs/no-unsafe-catch": "error",
         "rxjs/no-unsafe-first": "error",
-        "rxjs/no-unsafe-switchmap": "error",
-
-        "rxjs-angular/prefer-takeuntil": [
-          "error",
-          {
-            "checkDecorators": [ "Component", "Directive", "Pipe" ],
-            "checkDestroy": false
-          }
-        ]
-
+        "rxjs/no-unsafe-switchmap": "error"
       }
     },
     {
@@ -70,7 +61,6 @@
        "rules": {
         "@angular-eslint/template/accessibility-valid-aria": "error",
         "@angular-eslint/template/conditional-complexity": "error",
-        "@angular-eslint/template/no-call-expression": "error",
         "@angular-eslint/template/no-duplicate-attributes": "error",
         "@angular-eslint/template/no-positive-tabindex": "error",
         "@angular-eslint/template/use-track-by-function": "error"

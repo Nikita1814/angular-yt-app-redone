@@ -9,5 +9,5 @@
 
 <app-error-logger
   *ngIf="errorsObj && isTouched"
-  [error]="errorMsgs[`${Object.keys(this.errorsObj)[0]}`] || ''"
+  [error]="getMsg()"
 ></app-error-logger>
