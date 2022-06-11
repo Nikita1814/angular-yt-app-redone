@@ -1,6 +1,6 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { User } from 'src/app/auth/models/auth-models';
 
-const selectUser = createFeatureSelector<User>('userData');
+const selectUserFeature = createFeatureSelector<User>('userData');
 
-export const getUser = createSelector(selectUser, (state: User) => state);
+export const selectUser = createSelector(selectUserFeature, (state: User) => state);

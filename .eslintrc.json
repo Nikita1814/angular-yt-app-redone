@@ -53,11 +53,11 @@
         "rxjs-angular/prefer-takeuntil": [
           "error",
           {
-            "checkDecorators": [ "Component", "Directive", "Pipe", "Injectable" ],
+            "checkDecorators": [ "Component", "Directive", "Pipe" ],
             "checkDestroy": false
           }
         ]
-        
+
       }
     },
     {
@@ -70,7 +70,6 @@
        "rules": {
         "@angular-eslint/template/accessibility-valid-aria": "error",
         "@angular-eslint/template/conditional-complexity": "error",
-        "@angular-eslint/template/cyclomatic-complexity": "error",
         "@angular-eslint/template/no-call-expression": "error",
         "@angular-eslint/template/no-duplicate-attributes": "error",
         "@angular-eslint/template/no-positive-tabindex": "error",

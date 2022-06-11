@@ -9,7 +9,7 @@ import {
 import { Store } from '@ngrx/store';
 import { Observable, takeUntil } from 'rxjs';
 import { User } from '../auth/models/auth-models';
-import { getUser } from '../redux/auth-reducer/auth.selector';
+import { selectUser } from '../redux/auth-reducer/auth.selector';
 
 
 @Injectable({
@@ -17,7 +17,7 @@ import { getUser } from '../redux/auth-reducer/auth.selector';
 })
 export class AuthReqGuard implements CanActivate {
   constructor(private store: Store, public router: Router) {}
-  user$ = this.store.select(getUser)
+  user$ = this.store.select(selectUser)
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -29,7 +29,6 @@ export class AuthReqGuard implements CanActivate {
 
       let isLoggedIn: boolean = false
       this.user$.subscribe((u: User | null) => {
-        takeUntil(this.user$)
         if (u?.token){
           console.log('user is', u )
           isLoggedIn = true

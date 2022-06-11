@@ -8,7 +8,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/auth/models/auth-models';
 import { logOut } from 'src/app/redux/auth-reducer/auth.actions';
-import { getUser } from 'src/app/redux/auth-reducer/auth.selector';
+import { selectUser } from 'src/app/redux/auth-reducer/auth.selector';
 import { initiateSearch } from 'src/app/redux/search-item-reducer/search-item.actions';
 import { PageState } from 'src/app/redux/state-related-models';
 
@@ -23,12 +23,12 @@ export class HeaderComponent implements OnInit {
   searchString!: string;
   user$: Observable<User | null>;
   filtersVisible: boolean;
-  constructor(public store: Store<PageState>) {}
+  constructor(public store: Store) {}
 
   ngOnInit(): void {
     this.searchString = '';
     this.filtersVisible = false;
-    this.user$ = this.store.select(getUser);
+    this.user$ = this.store.select(selectUser);
   }
 
   signOut() {
