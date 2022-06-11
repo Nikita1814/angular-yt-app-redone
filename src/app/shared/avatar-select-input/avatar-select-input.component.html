@@ -1,0 +1,9 @@
+<p class="block-label">Select an Avatar</p>
+<div class="avatar-list">
+  <ng-container *ngFor="let avatar of avatars">
+    <button [disabled]="disabled" (click)="selectAvatar(avatar)">
+      <img class="avatar" [class.selected]="!disabled && selected === avatar"
+        [src]="'../../../assets/' + avatar + '.svg'" />
+    </button>
+  </ng-container>
+</div>

@@ -27,25 +27,19 @@ export class InputAndErrorComponent implements ControlValueAccessor {
   @Input() errorsObj!: ValidationErrors | null;
   @Input() errorMsgs!: { [kind: string]: string };
   @Input() id!: string;
-  @Input() formControl!: FormControl;
+  @Input() control!: FormControl;
   @Input() controlName!: string;
   @Input() isTouched!: boolean;
   @ViewChild(FormControlDirective, { static: true })
   formControlDirective!: FormControlDirective;
   public errorMsg!: string | null;
   private value!: string;
-  constructor(private controlContainer: ControlContainer) {
+  constructor(public controlContainer: ControlContainer) {
     if (this.errorsObj)
       this.errorMsg =
         this.errorMsgs[`${Object.keys(this.errorsObj)[0]}`] || null;
   }
-
-  get c() {
-    return (
-      this.formControl || this.controlContainer!.control!.get(this.controlName)
-    );
-  }
-
+  
   getMsg(): string {
     return this.errorsObj && this.errorMsgs
       ? this.errorMsgs[`${Object.keys(this.errorsObj)[0]}`]

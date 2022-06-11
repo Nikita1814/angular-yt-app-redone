@@ -12,7 +12,9 @@
         pattern:
           'Your password is not strong enough,the passsword must contain at least 8 characters including: uppercase, lowercase, letters, numbers, special characters (! @ # ? )'
       }" [isTouched]="logInForm.get('password')!.touched"></app-input-and-error>
+      <app-avatar-select-input formControlName="avatar" [controlName]="'avatar'">
 
+      </app-avatar-select-input>
     <div class="form-btns">
       <input [disabled]="!logInForm.valid" type="submit" value="Sign-in" (click)="handleSignIn()"
         class="log-in button-blue"/>

@@ -72,7 +72,6 @@
   height: 32px;
 }
 .header-auth-icon {
-  width: 25px;
-  height: 25px;
-  background-image: url(../../../../assets/login.svg);
+  width: 30px;
+  height: 30px;
 }

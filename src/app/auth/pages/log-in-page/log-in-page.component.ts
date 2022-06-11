@@ -32,6 +32,7 @@ export class LogInPageComponent implements OnInit{
         ],
       },
     ],
+    avatar:['avatar-x']
   });
 
   handleSignIn() {
