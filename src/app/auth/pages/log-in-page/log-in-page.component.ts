@@ -1,3 +1,4 @@
+import { ImplicitReceiver } from '@angular/compiler';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
@@ -13,7 +14,8 @@ import { PageState } from 'src/app/redux/state-related-models';
   styleUrls: ['./log-in-page.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LogInPageComponent {
+export class LogInPageComponent implements OnInit{
+
   constructor(
     private fb: FormBuilder,
     private store: Store,
@@ -40,4 +42,7 @@ export class LogInPageComponent {
       this.router.navigateByUrl('');
     }
   }
+ ngOnInit(): void {
+   console.log('storage', localStorage)
+ }
 }
