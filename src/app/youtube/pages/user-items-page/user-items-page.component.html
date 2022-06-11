@@ -14,5 +14,5 @@
   ></app-user-item-form>
 </div>
 <div className="card-list">
-  <app-user-item *ngFor="let vid of userCards$ | async" [userVid]="vid"></app-user-item>
+  <app-user-item *ngFor="let vid of userCards$ | async; let index=index; trackBy:cardById" [userVid]="vid"></app-user-item>
 </div>

@@ -13,10 +13,10 @@ import { PageState } from 'src/app/redux/state-related-models';
   styleUrls: ['./log-in-page.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LogInPageComponent implements OnInit {
+export class LogInPageComponent {
   constructor(
     private fb: FormBuilder,
-    private store: Store<PageState>,
+    private store: Store,
     private router: Router
   ) {}
   logInForm = this.fb.group({
@@ -32,7 +32,6 @@ export class LogInPageComponent implements OnInit {
     ],
   });
 
-  ngOnInit(): void {}
   handleSignIn() {
     if (this.logInForm.valid) {
       this.store.dispatch(

@@ -1,10 +1,9 @@
-import { createAction, props } from "@ngrx/store";
-import { FiltersState } from "./filters.reducer";
-
+import { createAction, props } from '@ngrx/store';
+import { FiltersState } from './filters.reducer';
 
 export const updateSortType = createAction(
   '[Filters] Sort Type Update ',
-  props<{ sortType: "date" | "views" | "likes" | "none"  }>()
+  props<{ sortType: 'date' | 'views' | 'likes' | 'none' }>()
 );
 
 export const updateFilter = createAction(
@@ -14,5 +13,8 @@ export const updateFilter = createAction(
 
 export const updateFilters = createAction(
   '[Filters] Filters Update',
-  props<FiltersState>()
-)
+  props<{
+    sortType: 'date' | 'views' | 'likes' | 'none';
+    filterBy: string;
+  }>()
+);

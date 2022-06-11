@@ -4,21 +4,28 @@ import { ResponseVidInt } from 'src/app/youtube/models/yt-models';
 import { updateFilter, updateFilters, updateSortType } from './filters.actions';
 
 export interface FiltersState {
-  sortType: "date" | "views" | "likes" | "none";
+  sortType: 'date' | 'views' | 'likes' | 'none';
   filterBy: string;
 }
 
-
-
-
 export const initialState: FiltersState = {
-  sortType:'none',
-  filterBy:''
+  sortType: 'none',
+  filterBy: '',
 };
 
 export const filtersReducer = createReducer(
   initialState,
-  on(updateSortType, (state, { sortType }) => ({...state, sortType})),
-  on(updateFilter, (state, { filterBy }) => ({...state, filterBy})),
-  on(updateFilters, (state, props) => state = { sortType : props.sortType, filterBy: props.filterBy} )
+  on(
+    updateSortType,
+    (state, { sortType }): FiltersState => ({ ...state, sortType })
+  ),
+  on(
+    updateFilter,
+    (state, { filterBy }): FiltersState => ({ ...state, filterBy })
+  ),
+  on(
+    updateFilters,
+    (state, props): FiltersState =>
+      (state = { sortType: props.sortType, filterBy: props.filterBy })
+  )
 );

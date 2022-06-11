@@ -8,7 +8,6 @@ import {
 
 import { Validators, FormBuilder } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { PageState } from 'src/app/redux/state-related-models';
 import { updateUserItems } from 'src/app/redux/user-items-reducer/user-items.actions';
 import { ValidateDate } from 'src/app/shared/validators/date.validator';
 import { ValidateImgLink } from 'src/app/shared/validators/img-link.validator';
@@ -23,8 +22,7 @@ import { UserCardInfo } from '../../models/yt-models';
 export class UserItemFormComponent {
   @Input() toggleFormVisibility: () => void;
   @Input() addCard: (card: UserCardInfo) => void;
-  @Output() formSubmission = new EventEmitter<UserCardInfo>();
-  @Output() formExit = new EventEmitter<void>();
+  @Output() readonly formExit = new EventEmitter<void>();
 
   cardForm = this.fb.group({
     title: [
@@ -73,10 +71,14 @@ export class UserItemFormComponent {
     ],
   });
 
-  constructor(private fb: FormBuilder, private store: Store<PageState>) {}
+  constructor(private fb: FormBuilder, private store: Store) {}
 
   handleSubmit() {
     if (this.cardForm.valid) {
+      const userItem = {
+        ...this.cardForm.value,
+        id: `${Date.now()}`
+      }
       this.store.dispatch(
         updateUserItems({ userItem: this.cardForm.value as UserCardInfo })
       );

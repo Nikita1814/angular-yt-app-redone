@@ -24,5 +24,7 @@ export class SearchPageComponent implements OnInit {
     this.vids$ = this.store.select(getSearchItems)
     this.filters$ = this.store.select(getFilters)
   }
-
+  vidById(index: number, vid: ResponseVidInt) {
+    return vid.id;
+}
 }

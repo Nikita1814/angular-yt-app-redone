@@ -5,10 +5,7 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
-import { Router } from '@angular/router';
 import { ResponseVidInt } from '../../models/yt-models';
-/*import { ResponseVidInt } from 'src/app/youtube/models/response-vid-model';
-import { ResponseManagementService } from '../../services/response-management.service';*/
 
 @Component({
   selector: 'app-search-item',
@@ -21,7 +18,7 @@ export class SearchItemComponent implements OnInit {
   @Input() vidObj: ResponseVidInt;
   imgUrl: string;
   stringifiedVidObj: string
-  constructor(/*public respService: ResponseManagementService*/) {}
+  constructor() {}
 
   ngOnInit(): void {
     this.imgUrl = this.vidObj.snippet.thumbnails.high.url;

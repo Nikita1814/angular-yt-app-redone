@@ -1,10 +1,9 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { User } from 'src/app/auth/models/auth-models';
 import { ResponseVidInt } from 'src/app/youtube/models/yt-models';
 
-const searchItemsSelector = createFeatureSelector<ResponseVidInt[]>('searchResults');
+const selectSearchItems = createFeatureSelector<ResponseVidInt[]>('searchResults');
 
 export const getSearchItems = createSelector(
-  searchItemsSelector,
+  selectSearchItems,
   (state: ResponseVidInt[] | []) => state
 );

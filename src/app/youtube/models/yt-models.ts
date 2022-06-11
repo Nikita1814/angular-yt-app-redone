@@ -132,6 +132,7 @@ export interface SearchResponseInt {
 }
 
 export interface UserCardInfo {
+  id:string;
   title: string;
   description: string;
   img: string;

@@ -8,5 +8,5 @@ export const initialState: UserCardInfo[] | [] = [];
 
 export const userItemsReducer = createReducer(
   initialState,
-  on(updateUserItems, (state, { userItem }) => [...state, userItem])
+  on(updateUserItems, (state, { userItem }) : UserCardInfo[]=> [...state, userItem])
 );

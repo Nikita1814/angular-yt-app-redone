@@ -1,22 +1,21 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { PageState } from 'src/app/redux/state-related-models';
 import { getUserItems } from 'src/app/redux/user-items-reducer/user-items.selector';
 import { UserCardInfo } from '../../models/yt-models';
 
 @Component({
-  selector: 'app-user-cards-page',
-  templateUrl: './user-cards-page.component.html',
-  styleUrls: ['./user-cards-page.component.css'],
+  selector: 'app-user-items-page',
+  templateUrl: './user-items-page.component.html',
+  styleUrls: ['./user-items-page.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserItemsPageComponent {
+export class UserItemsPageComponent implements OnInit {
   formIsVisible: boolean;
   userCards: UserCardInfo[];
   userCards$: Observable<UserCardInfo[]>;
 
-  constructor(private store: Store<PageState>) {}
+  constructor(private store: Store) {}
 
   ngOnInit(): void {
     this.formIsVisible = false;
@@ -32,8 +31,7 @@ export class UserItemsPageComponent {
     this.userCards.push(card);
   }
 
-  /*handleSubmit(val: UserCardInfo) {
-    this.userCards.push(val);
-    this.toggleFormVisibility();
-  }*/
+  cardsById(index: number, card: UserCardInfo) {
+    return card.id;
+  }
 }
