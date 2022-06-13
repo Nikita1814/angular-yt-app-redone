@@ -35,11 +35,12 @@ export class HeaderComponent implements OnInit {
     this.user$ = this.store.select(selectUser);
   }
 
+
   signOut() {
     this.store.dispatch(logOut());
   }
 
   submitSearch() {
-    this.store.dispatch(initiateSearch({ ...this.searchForm.value }));
+    this.store.dispatch(initiateSearch({ searchQuery: this.searchString }));
   }
 }
