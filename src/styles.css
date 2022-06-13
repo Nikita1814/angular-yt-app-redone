@@ -3,6 +3,7 @@ body {
   height: 100vh;
   margin: 0 auto;
   font-family: Roboto;
+  position: relative;
 }
 
 .button-blue {
@@ -29,6 +30,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  min-height: 100vh;
 }
 .page-button {
   height: 30px;
@@ -91,3 +93,4 @@ button{
   border: none;
   box-shadow: none;
 }
+

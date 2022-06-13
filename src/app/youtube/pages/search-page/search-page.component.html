@@ -9,4 +9,6 @@
       </h2>
     </ng-container>
   </div>
+  <app-error-modal *ngIf="searchItemsFacade.searchError$ | async as err" [error]="err">
+</app-error-modal>
 </div>

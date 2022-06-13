@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { ResponseVidInt } from 'src/app/youtube/models/yt-models';
 import { SearchItemState } from './search-item.reducer';
@@ -10,3 +11,7 @@ export const selectSearchItems = createSelector(
   (state: SearchItemState) : ResponseVidInt[] => state.filteredSearchItems
 );
 
+export const selectSearchItemsError = createSelector(
+  selectSearchItemsFeature,
+  (state: SearchItemState) : HttpErrorResponse | null => state.searchItemsError
+)

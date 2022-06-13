@@ -1,7 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { createReducer, on } from '@ngrx/store';
 import { ResponseVidInt } from 'src/app/youtube/models/yt-models';
 import sortFuncs from 'src/app/youtube/utils/filter-functions';
-import { updateFilters, updateSearchItems } from './search-item.actions';
+import { clearSearchItemsError, searchItemsError, updateFilters, updateSearchItems } from './search-item.actions';
 
 export type SortType = 'date' | 'views' | 'likes' | 'none';
 export interface Filters {
@@ -10,7 +11,8 @@ export interface Filters {
 }
 export interface SearchItemState extends Filters {
   searchItems: ResponseVidInt[];
-  filteredSearchItems: ResponseVidInt[]
+  filteredSearchItems: ResponseVidInt[];
+  searchItemsError: HttpErrorResponse | null
 }
 //export const initialState: ResponseVidInt[] | [] = [];
 export const initialState: SearchItemState = {
@@ -18,6 +20,7 @@ export const initialState: SearchItemState = {
   filteredSearchItems: [],
   sortType: 'none',
   filterBy: '',
+  searchItemsError: null
 };
 
 export const searchItemsReducer = createReducer(
@@ -42,5 +45,14 @@ export const searchItemsReducer = createReducer(
       sortType: props.sortType,
       filterBy: props.filterBy,
     })
-  )
+  ),
+  on(searchItemsError, (state, props): SearchItemState => ({
+  ...state,
+  searchItemsError: props.error
+  })),
+  
+  on(clearSearchItemsError, (state) : SearchItemState => ({
+    ...state,
+    searchItemsError:null
+  }))
 );

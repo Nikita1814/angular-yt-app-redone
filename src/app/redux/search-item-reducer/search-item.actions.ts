@@ -1,9 +1,19 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { createAction, props } from '@ngrx/store';
 import { ResponseVidInt } from 'src/app/youtube/models/yt-models';
 
 export const updateSearchItems = createAction(
   '[Search Results Page] Yt Search Success',
   props<{ searchItems: ResponseVidInt[] }>()
+);
+
+export const searchItemsError = createAction(
+  '[Search Results Page] Yt Search Error',
+  props<{ error: HttpErrorResponse}>()
+);
+
+export const clearSearchItemsError = createAction(
+  '[Search Results Page] clearing Yt Search Error '
 );
 
 export const initiateSearch = createAction(
