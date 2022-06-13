@@ -31,6 +31,7 @@ export class LogInPageComponent implements OnInit {
   });
 
   handleSignIn() {
+    console.log('Handling sign in')
     if (this.logInForm.valid) {
       this.store.dispatch(
         updateUser({ user: { ...this.logInForm.value, token: 'I am a token' } })
