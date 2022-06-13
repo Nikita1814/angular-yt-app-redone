@@ -7,9 +7,7 @@ import {
 } from '@angular/core';
 
 import { Validators, FormBuilder } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { UserItemsFacadeService } from 'src/app/redux/user-items-reducer/user-items-facade.service';
-import { updateUserItems } from 'src/app/redux/user-items-reducer/user-items.actions';
 import { UserCardInfo } from '../../models/yt-models';
 
 @Component({

@@ -24,5 +24,4 @@ export class SearchItemComponent implements OnInit {
     this.imgUrl = this.vidObj.snippet.thumbnails.high.url;
     this.stringifiedVidObj = JSON.stringify(this.vidObj);
   }
-
 }

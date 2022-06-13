@@ -32,9 +32,7 @@ export class DetailedVideoPageComponent implements OnInit {
     this.item = history.state.data
 
     this.vidDate = new Date(this.item.snippet.publishedAt);
-    //JSON.parse(history.state.data);
     this.unsafeVidUrl = `https://www.youtube.com/embed/${this.item.id}`
-    this.vidUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.unsafeVidUrl)
-    console.log(history)
+    this.vidUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.unsafeVidUrl);
   }
 }

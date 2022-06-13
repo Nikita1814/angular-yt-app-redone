@@ -1,9 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, ValidationErrors, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
 import { AuthFacadeService } from 'src/app/redux/auth-reducer/auth-facade.service';
-import { updateUser } from 'src/app/redux/auth-reducer/auth.actions';
 
 @Component({
   selector: 'app-log-in-page',
@@ -14,7 +12,6 @@ import { updateUser } from 'src/app/redux/auth-reducer/auth.actions';
 export class LogInPageComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
-    private store: Store,
     private router: Router,
     private authFacade: AuthFacadeService
   ) {}
@@ -33,7 +30,6 @@ export class LogInPageComponent implements OnInit {
   });
 
   handleSignIn() {
-    console.log('Handling sign in');
     if (this.logInForm.valid) {
       this.authFacade.setUser({
         ...this.logInForm.value,
