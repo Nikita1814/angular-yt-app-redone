@@ -10,3 +10,11 @@ export const initiateSearch = createAction(
   '[Search Results Page] Initiate Yt Search ',
   props<{ searchQuery: string }>()
 );
+
+export const updateFilters = createAction(
+  '[search Results Page] Filters Update',
+  props<{
+    sortType: 'date' | 'views' | 'likes' | 'none';
+    filterBy: string;
+  }>()
+);

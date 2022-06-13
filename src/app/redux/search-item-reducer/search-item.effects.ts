@@ -14,8 +14,10 @@ export class SearchEffects {
         this.searchService
           .makeSearch(action.searchQuery)
           .pipe(
-            map((searchItems: ResponseInt) =>
-              updateSearchItems({ searchItems: searchItems.items })
+            map((searchItems: ResponseInt) =>{
+              
+              return updateSearchItems({ searchItems: searchItems.items })
+            }
             )
           )
       )

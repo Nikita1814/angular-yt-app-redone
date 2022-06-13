@@ -8,6 +8,8 @@ import { Store } from '@ngrx/store';
 import { FiltersFacadeService } from 'src/app/redux/filters-reducer/filters-facade.service';
 import { updateFilters } from 'src/app/redux/filters-reducer/filters.actions';
 import { FiltersState } from 'src/app/redux/filters-reducer/filters.reducer';
+import { SearchItemFacadeService } from 'src/app/redux/search-item-reducer/search-item-facade.service';
+import { Filters } from 'src/app/redux/search-item-reducer/search-item.reducer';
 import { PageState } from 'src/app/redux/state-related-models';
 
 @Component({
@@ -20,7 +22,7 @@ import { PageState } from 'src/app/redux/state-related-models';
 export class FiltersComponent {
 
 
-  constructor(private fb: FormBuilder,  private filtersFacade: FiltersFacadeService) {}
+  constructor(private fb: FormBuilder,  private filtersFacade: FiltersFacadeService, private searchItemFacade: SearchItemFacadeService ) {}
 
   filterForm = this.fb.group({
     sortType: '',
@@ -29,6 +31,7 @@ export class FiltersComponent {
   })
 
   handleSubmit(){
-   this.filtersFacade.setFilters(this.filterForm.value as FiltersState)
+   //this.filtersFacade.setFilters(this.filterForm.value as FiltersState)
+    this.searchItemFacade.setFilters(this.filterForm.value as Filters)
   }
 }

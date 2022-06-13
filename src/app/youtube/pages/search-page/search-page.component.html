@@ -1,11 +1,12 @@
 <app-header></app-header>
 <div class="main">
   <div class="search-list">
-    <app-search-item *ngFor="let vid of vids let index=index; trackBy:vidById" [vidObj]="vid">
-    </app-search-item>
-
-    <h2 *ngIf="vids.length === 0">
-      Nothing to display, try searching for something
-    </h2>
+    <ng-container *ngIf="searchItemsFacade.searchItems$ | async as vids">
+      <app-search-item *ngFor="let vid of vids let index=index; trackBy:vidById" [vidObj]="vid">
+      </app-search-item>
+      <h2 *ngIf="vids.length === 0">
+        Nothing to display, try searching for something
+      </h2>
+    </ng-container>
   </div>
 </div>
