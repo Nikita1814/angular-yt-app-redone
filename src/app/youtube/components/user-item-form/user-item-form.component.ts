@@ -46,7 +46,7 @@ export class UserItemFormComponent {
     img: [
       '',
       {
-        validators: [Validators.required, ValidateImgLink],
+        validators: [Validators.required],
         updateOn: 'change',
       },
     ],
@@ -65,7 +65,7 @@ export class UserItemFormComponent {
     date: [
       '',
       {
-        validators: [ValidateDate],
+        validators: [Validators.required],
         updateOn: 'change',
       },
     ],
@@ -80,7 +80,7 @@ export class UserItemFormComponent {
         id: `${Date.now()}`,
       };
       this.store.dispatch(
-        updateUserItems({ userItem: this.cardForm.value as UserCardInfo })
+        updateUserItems({ userItem: {...this.cardForm.value, date: this.cardForm.value.date.toString()} as UserCardInfo })
       );
       this.exitForm();
     }
