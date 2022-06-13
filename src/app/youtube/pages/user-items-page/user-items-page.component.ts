@@ -1,7 +1,6 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { selectUserItems } from 'src/app/redux/user-items-reducer/user-items.selector';
+import { UserItemsFacadeService } from 'src/app/redux/user-items-reducer/user-items-facade.service';
 import { UserCardInfo } from '../../models/yt-models';
 
 @Component({
@@ -15,12 +14,11 @@ export class UserItemsPageComponent implements OnInit {
   userCards: UserCardInfo[];
   userCards$: Observable<UserCardInfo[]>;
 
-  constructor(private store: Store) {}
+  constructor(public userItemsFacade: UserItemsFacadeService) {}
 
   ngOnInit(): void {
     this.formIsVisible = false;
     this.userCards = [];
-    this.userCards$ = this.store.select(selectUserItems);
   }
 
   toggleFormVisibility() {

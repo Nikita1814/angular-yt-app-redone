@@ -14,7 +14,7 @@
     <a class="button-blue button-m" routerLink="/user-forms"> User Cards </a>
   </div>
   <div (click)="signOut()" class="header-authorization">
-    <ng-container *ngIf="user$ | async as user">
+    <ng-container *ngIf="authFacade.user$ | async as user">
       <img class="header-auth-icon" [src]="'../../../../assets/' + user!.avatar + '.svg'" />
       <p> {{ user.login || "not logged in" }}</p>
     </ng-container>

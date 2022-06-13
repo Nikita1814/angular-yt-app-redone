@@ -28,9 +28,12 @@ export class AuthReqGuard implements CanActivate {
     return this.user$.pipe(
       map((user: User) => {
         if (user.token) {
+          console.log('all good')
           return true;
-        }
-        return this.router.createUrlTree(['/auth']);
+        } else {
+          console.log('this aint it chief')
+          return this.router.createUrlTree(['/auth'])
+        };
       })
     );
   }

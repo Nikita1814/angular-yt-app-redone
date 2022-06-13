@@ -8,9 +8,8 @@ import {
 
 import { Validators, FormBuilder } from '@angular/forms';
 import { Store } from '@ngrx/store';
+import { UserItemsFacadeService } from 'src/app/redux/user-items-reducer/user-items-facade.service';
 import { updateUserItems } from 'src/app/redux/user-items-reducer/user-items.actions';
-import { ValidateDate } from 'src/app/shared/validators/date.validator';
-import { ValidateImgLink } from 'src/app/shared/validators/img-link.validator';
 import { UserCardInfo } from '../../models/yt-models';
 
 @Component({
@@ -71,17 +70,16 @@ export class UserItemFormComponent {
     ],
   });
 
-  constructor(private fb: FormBuilder, private store: Store) {}
+  constructor( private fb: FormBuilder, private userItemsFacade: UserItemsFacadeService ) {}
 
   handleSubmit() {
     if (this.cardForm.valid) {
       const userItem = {
         ...this.cardForm.value,
         id: `${Date.now()}`,
+        date: this.cardForm.value.date.toString()
       };
-      this.store.dispatch(
-        updateUserItems({ userItem: {...this.cardForm.value, date: this.cardForm.value.date.toString()} as UserCardInfo })
-      );
+      this.userItemsFacade.setUserItems( userItem as UserCardInfo )
       this.exitForm();
     }
   }

@@ -9,7 +9,7 @@ import { selectUserItems } from './user-items.selector';
 })
 export class UserItemsFacadeService {
   userItems$ = this.store.select(selectUserItems)
-  constructor(private store: Store) { }
+  constructor(private store: Store ) { }
 
   setUserItems (userItem: UserCardInfo) {
     this.store.dispatch(updateUserItems({userItem:userItem}))

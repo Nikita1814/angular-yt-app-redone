@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, ValidationErrors, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { AuthFacadeService } from 'src/app/redux/auth-reducer/auth-facade.service';
 import { updateUser } from 'src/app/redux/auth-reducer/auth.actions';
 
 @Component({
@@ -14,7 +15,8 @@ export class LogInPageComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private store: Store,
-    private router: Router
+    private router: Router,
+    private authFacade: AuthFacadeService
   ) {}
   logInForm = this.fb.group({
     login: ['', { validators: [Validators.required, Validators.email] }],
@@ -31,11 +33,12 @@ export class LogInPageComponent implements OnInit {
   });
 
   handleSignIn() {
-    console.log('Handling sign in')
+    console.log('Handling sign in');
     if (this.logInForm.valid) {
-      this.store.dispatch(
-        updateUser({ user: { ...this.logInForm.value, token: 'I am a token' } })
-      );
+      this.authFacade.setUser({
+        ...this.logInForm.value,
+        token: 'I am a token',
+      });
       this.router.navigateByUrl('');
     }
   }
@@ -47,6 +50,5 @@ export class LogInPageComponent implements OnInit {
       ? errorMsgs[`${Object.keys(errorObj)[0]}`]
       : '';
   }
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }
