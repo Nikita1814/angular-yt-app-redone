@@ -4,6 +4,7 @@ import {
   OnInit,
   ChangeDetectionStrategy,
 } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/auth/models/auth-models';
@@ -20,10 +21,13 @@ import { PageState } from 'src/app/redux/state-related-models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
+  searchForm = this.fb.group({
+    searchQuery: ['']
+  })
   searchString!: string;
   user$: Observable<User | null>;
   filtersVisible: boolean;
-  constructor(public store: Store) {}
+  constructor(public store: Store, public fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.searchString = '';
@@ -36,6 +40,6 @@ export class HeaderComponent implements OnInit {
   }
 
   submitSearch() {
-    this.store.dispatch(initiateSearch({ searchQuery: this.searchString }));
+    this.store.dispatch(initiateSearch({ ...this.searchForm.value }));
   }
 }

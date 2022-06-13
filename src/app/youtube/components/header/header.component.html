@@ -2,10 +2,10 @@
   <div class="header-searchbar">
     <div class="header-filter">
       <div class="header-logo"></div>
-      <input [(ngModel)]="searchString" type="text" class="header-search-input" />
-      <button (click)="submitSearch()" class="header-search-button button-blue button-m">
-        search
-      </button>
+      <form class="header-search-grp" (ngSubmit)="submitSearch()" [formGroup]="searchForm">
+        <input formControlName="searchQuery" type="text" class="header-search-input" />
+        <input type="submit" value="search" class="header-search-button button-blue button-m" />
+      </form>
     </div>
     <button (click)="filtersVisible = !filtersVisible" class="header-sort-button page-button"></button>
   </div>
