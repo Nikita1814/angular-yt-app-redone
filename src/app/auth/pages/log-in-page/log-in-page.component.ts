@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, ValidationErrors, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthFacadeService } from 'src/app/redux/auth-reducer/auth-facade.service';
@@ -9,7 +9,7 @@ import { AuthFacadeService } from 'src/app/redux/auth-reducer/auth-facade.servic
   styleUrls: ['./log-in-page.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LogInPageComponent implements OnInit {
+export class LogInPageComponent {
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -46,5 +46,4 @@ export class LogInPageComponent implements OnInit {
       ? errorMsgs[`${Object.keys(errorObj)[0]}`]
       : '';
   }
-  ngOnInit(): void {}
 }

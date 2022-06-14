@@ -18,7 +18,6 @@ import { UserCardInfo } from '../../models/yt-models';
 })
 export class UserItemFormComponent {
   @Input() toggleFormVisibility: () => void;
-  @Input() addCard: (card: UserCardInfo) => void;
   @Output() readonly formExit = new EventEmitter<void>();
 
   cardForm = this.fb.group({

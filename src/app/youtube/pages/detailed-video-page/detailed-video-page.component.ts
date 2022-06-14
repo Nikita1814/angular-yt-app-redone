@@ -30,7 +30,6 @@ export class DetailedVideoPageComponent implements OnInit {
   ngOnInit(): void {
     this.itemId = this.route.snapshot.params['id']
     this.item = history.state.data
-
     this.vidDate = new Date(this.item.snippet.publishedAt);
     this.unsafeVidUrl = `https://www.youtube.com/embed/${this.item.id}`
     this.vidUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.unsafeVidUrl);

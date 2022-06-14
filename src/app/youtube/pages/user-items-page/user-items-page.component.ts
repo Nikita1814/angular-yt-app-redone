@@ -18,15 +18,10 @@ export class UserItemsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.formIsVisible = false;
-    this.userCards = [];
   }
 
   toggleFormVisibility() {
     this.formIsVisible = !this.formIsVisible;
-  }
-
-  addCard(card: UserCardInfo) {
-    this.userCards.push(card);
   }
 
   cardsById(index: number, card: UserCardInfo) {

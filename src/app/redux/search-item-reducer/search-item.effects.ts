@@ -17,8 +17,8 @@ export class SearchEffects {
           map((searchItems: ResponseInt) => {
             return updateSearchItems({ searchItems: searchItems.items });
           }),
-          catchError((error) =>{
-           return of (error).pipe(map((err: HttpErrorResponse) => searchItemsError({error: error})))
+          catchError((error: unknown) =>{
+           return of (error as HttpErrorResponse).pipe(map((err: HttpErrorResponse) => searchItemsError({error: err})))
           })
         )
       )

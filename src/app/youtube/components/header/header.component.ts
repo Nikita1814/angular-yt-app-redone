@@ -1,15 +1,11 @@
 import {
   Component,
   ViewEncapsulation,
-  OnInit,
   ChangeDetectionStrategy,
 } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { User } from 'src/app/auth/models/auth-models';
 import { AuthFacadeService } from 'src/app/redux/auth-reducer/auth-facade.service';
-import { selectUser } from 'src/app/redux/auth-reducer/auth.selector';
 import { SearchItemFacadeService } from 'src/app/redux/search-item-reducer/search-item-facade.service';
 
 
@@ -20,21 +16,12 @@ import { SearchItemFacadeService } from 'src/app/redux/search-item-reducer/searc
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   searchForm = this.fb.group({
     searchQuery: ['']
   })
-  searchString!: string;
-  user$: Observable<User | null>;
-  filtersVisible: boolean;
+  filtersVisible: boolean = false;
   constructor(public store: Store, public fb: FormBuilder, public authFacade: AuthFacadeService, public searchItemFacade: SearchItemFacadeService) {}
-
-  ngOnInit(): void {
-    this.searchString = '';
-    this.filtersVisible = false;
-    this.user$ = this.store.select(selectUser);
-  }
-
 
   signOut() {
     this.authFacade.logOut();
