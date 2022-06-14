@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserItemsFacadeService } from 'src/app/redux/user-items-reducer/user-items-facade.service';
 import { UserCardInfo } from '../../models/yt-models';
@@ -9,16 +9,13 @@ import { UserCardInfo } from '../../models/yt-models';
   styleUrls: ['./user-items-page.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserItemsPageComponent implements OnInit {
-  formIsVisible: boolean;
+export class UserItemsPageComponent {
+  formIsVisible: boolean = false;
   userCards: UserCardInfo[];
   userCards$: Observable<UserCardInfo[]>;
 
   constructor(public userItemsFacade: UserItemsFacadeService) {}
 
-  ngOnInit(): void {
-    this.formIsVisible = false;
-  }
 
   toggleFormVisibility() {
     this.formIsVisible = !this.formIsVisible;
