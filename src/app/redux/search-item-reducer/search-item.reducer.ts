@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { createReducer, on } from '@ngrx/store';
-import { ResponseVidInt } from 'src/app/youtube/models/yt-models';
+import { ResponseVideo } from 'src/app/youtube/models/yt-models';
 import sortFuncs from 'src/app/youtube/utils/filter-functions';
 import { clearSearchItemsError, searchItemsError, updateFilters, updateSearchItems } from './search-item.actions';
 
@@ -10,8 +10,8 @@ export interface Filters {
   filterBy: string;
 }
 export interface SearchItemState extends Filters {
-  searchItems: ResponseVidInt[];
-  filteredSearchItems: ResponseVidInt[];
+  searchItems: ResponseVideo[];
+  filteredSearchItems: ResponseVideo[];
   searchItemsError: HttpErrorResponse | null
 }
 //export const initialState: ResponseVidInt[] | [] = [];
@@ -50,7 +50,7 @@ export const searchItemsReducer = createReducer(
   ...state,
   searchItemsError: props.error
   })),
-  
+
   on(clearSearchItemsError, (state) : SearchItemState => ({
     ...state,
     searchItemsError:null

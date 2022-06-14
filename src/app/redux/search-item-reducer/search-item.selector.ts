@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { ResponseVidInt } from 'src/app/youtube/models/yt-models';
+import { ResponseVideo } from 'src/app/youtube/models/yt-models';
 import { SearchItemState } from './search-item.reducer';
 
 const selectSearchItemsFeature =
@@ -8,7 +8,7 @@ const selectSearchItemsFeature =
 
 export const selectSearchItems = createSelector(
   selectSearchItemsFeature,
-  (state: SearchItemState) : ResponseVidInt[] => state.filteredSearchItems
+  (state: SearchItemState) : ResponseVideo[] => state.filteredSearchItems
 );
 
 export const selectSearchItemsError = createSelector(

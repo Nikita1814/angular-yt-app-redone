@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { ResponseVidInt } from '../../models/yt-models';
+import { ResponseVideo } from '../../models/yt-models';
 
 @Component({
   selector: 'app-detailed-video-page',
@@ -19,7 +19,7 @@ export class DetailedVideoPageComponent implements OnInit {
   vidUrl: SafeUrl
   unsafeVidUrl: string
   itemId!: string;
-  item!: ResponseVidInt;
+  item!: ResponseVideo;
   vidDate!: Date;
   constructor(
     public route: ActivatedRoute,
