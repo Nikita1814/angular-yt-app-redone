@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { UserCardInfo } from 'src/app/youtube/models/yt-models';
+import { UserCardInfo } from 'src/app/youtube/models/you-tube-models';
 import { updateUserItems } from './user-items.actions';
 import { selectUserItems } from './user-items.selector';
 

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { map, exhaustMap, catchError } from 'rxjs/operators';
-import { VideoResponse } from 'src/app/youtube/models/yt-models';
+import { VideoResponse } from 'src/app/youtube/models/you-tube-models';
 import { SearchService } from 'src/app/youtube/services/search.service';
 import {
   initiateSearch,

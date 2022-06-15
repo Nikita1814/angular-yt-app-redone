@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { createReducer, on } from '@ngrx/store';
-import { ResponseVideo } from 'src/app/youtube/models/yt-models';
+import { ResponseVideo } from 'src/app/youtube/models/you-tube-models';
 import sortFuncs from 'src/app/youtube/utils/filter-functions';
 import { clearSearchItemsError, searchItemsError, updateFilters, updateSearchItems } from './search-item.actions';
 

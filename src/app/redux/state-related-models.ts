@@ -1,6 +1,6 @@
 import { Action, ActionReducer } from '@ngrx/store';
 import { User } from '../auth/models/auth-models';
-import { VideoResponse, UserCardInfo } from '../youtube/models/yt-models';
+import { VideoResponse, UserCardInfo } from '../youtube/models/you-tube-models';
 
 export interface PageState {
   searchResults: ActionReducer<VideoResponse[] | [], Action>;

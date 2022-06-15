@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { SearchItemFacadeService } from 'src/app/redux/search-item-reducer/search-item-facade.service';
-import { ResponseVideo } from '../../models/yt-models';
+import { ResponseVideo } from '../../models/you-tube-models';
 
 @Component({
   selector: 'app-search-page',
@@ -11,7 +11,7 @@ import { ResponseVideo } from '../../models/yt-models';
 export class SearchPageComponent {
   constructor(public searchItemsFacade: SearchItemFacadeService) {}
 
-  vidById(index: number, vid: ResponseVideo) {
+  videoById(index: number, vid: ResponseVideo) {
     return vid.id;
   }
 }

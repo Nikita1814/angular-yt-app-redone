@@ -8,7 +8,7 @@ import {
 
 import { Validators, FormBuilder } from '@angular/forms';
 import { UserItemsFacadeService } from 'src/app/redux/user-items-reducer/user-items-facade.service';
-import { UserCardInfo } from '../../models/yt-models';
+import { UserCardInfo } from '../../models/you-tube-models';
 
 @Component({
   selector: 'app-user-item-form',

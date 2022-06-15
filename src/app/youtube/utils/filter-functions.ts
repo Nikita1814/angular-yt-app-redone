@@ -1,4 +1,4 @@
-import { ResponseVideo } from '../models/yt-models';
+import { ResponseVideo } from '../models/you-tube-models';
 
 const sortFuncs = {
   date: (a: ResponseVideo, b: ResponseVideo): number => {

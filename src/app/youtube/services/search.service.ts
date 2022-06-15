@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { VideoResponse, SearchResponse } from '../models/yt-models';
+import { VideoResponse, SearchResponse } from '../models/you-tube-models';
 import { map, switchMap } from 'rxjs';
 @Injectable({
   providedIn: 'root',

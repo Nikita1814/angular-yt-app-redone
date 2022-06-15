@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { ResponseVideo } from '../../models/yt-models';
+import { ResponseVideo } from '../../models/you-tube-models';
 
 @Component({
   selector: 'app-detailed-video-page',
