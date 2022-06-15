@@ -15,17 +15,17 @@ import { Filters } from 'src/app/redux/search-item-reducer/search-item.reducer';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FiltersComponent {
-
-
-  constructor(private fb: FormBuilder,  private searchItemFacade: SearchItemFacadeService ) {}
+  constructor(
+    private fb: FormBuilder,
+    private searchItemFacade: SearchItemFacadeService
+  ) {}
 
   filterForm = this.fb.group({
     sortType: '',
-    filterBy: ''
+    filterBy: '',
+  });
 
-  })
-
-  handleSubmit(){
-    this.searchItemFacade.setFilters(this.filterForm.value as Filters)
+  handleSubmit() {
+    this.searchItemFacade.setFilters(this.filterForm.value as Filters);
   }
 }

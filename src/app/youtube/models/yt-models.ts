@@ -53,7 +53,7 @@ export interface ResponseVideo {
   };
 }
 
-export interface SearchResponseVideo{
+export interface SearchResponseVideo {
   kind: string;
   etag: string;
   id: {

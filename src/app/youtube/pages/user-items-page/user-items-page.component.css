@@ -28,7 +28,7 @@
   opacity: 0.5;
 }
 
-.card-list{
+.card-list {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
@@ -36,4 +36,3 @@
   justify-content: center;
   gap: 30px;
 }
-

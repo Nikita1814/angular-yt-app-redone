@@ -16,7 +16,6 @@ export class UserItemsPageComponent {
 
   constructor(public userItemsFacade: UserItemsFacadeService) {}
 
-
   toggleFormVisibility() {
     this.formIsVisible = !this.formIsVisible;
   }

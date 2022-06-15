@@ -8,7 +8,6 @@ import { Store } from '@ngrx/store';
 import { AuthFacadeService } from 'src/app/redux/auth-reducer/auth-facade.service';
 import { SearchItemFacadeService } from 'src/app/redux/search-item-reducer/search-item-facade.service';
 
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -18,16 +17,21 @@ import { SearchItemFacadeService } from 'src/app/redux/search-item-reducer/searc
 })
 export class HeaderComponent {
   searchForm = this.fb.group({
-    searchQuery: ['']
-  })
+    searchQuery: [''],
+  });
   filtersVisible: boolean = false;
-  constructor(public store: Store, public fb: FormBuilder, public authFacade: AuthFacadeService, public searchItemFacade: SearchItemFacadeService) {}
+  constructor(
+    public store: Store,
+    public fb: FormBuilder,
+    public authFacade: AuthFacadeService,
+    public searchItemFacade: SearchItemFacadeService
+  ) {}
 
   signOut() {
     this.authFacade.logOut();
   }
 
   submitSearch() {
-    this.searchItemFacade.submitSearch(this.searchForm.value.searchQuery)
+    this.searchItemFacade.submitSearch(this.searchForm.value.searchQuery);
   }
 }

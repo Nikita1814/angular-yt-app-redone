@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { createAction, props } from '@ngrx/store';
 import { ResponseVideo } from 'src/app/youtube/models/yt-models';
+import { SortType } from './search-item.reducer';
 
 export const updateSearchItems = createAction(
   '[Search Results Page] Yt Search Success',
@@ -9,7 +10,7 @@ export const updateSearchItems = createAction(
 
 export const searchItemsError = createAction(
   '[Search Results Page] Yt Search Error',
-  props<{ error: HttpErrorResponse}>()
+  props<{ error: HttpErrorResponse }>()
 );
 
 export const clearSearchItemsError = createAction(
@@ -24,7 +25,7 @@ export const initiateSearch = createAction(
 export const updateFilters = createAction(
   '[search Results Page] Filters Update',
   props<{
-    sortType: 'date' | 'views' | 'likes' | 'none';
+    sortType: SortType;
     filterBy: string;
   }>()
 );

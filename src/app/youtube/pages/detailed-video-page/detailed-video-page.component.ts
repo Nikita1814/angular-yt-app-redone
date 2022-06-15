@@ -16,22 +16,21 @@ import { ResponseVideo } from '../../models/yt-models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DetailedVideoPageComponent implements OnInit {
-  vidUrl: SafeUrl
-  unsafeVidUrl: string
+  vidUrl: SafeUrl;
+  unsafeVidUrl: string;
   itemId!: string;
   item!: ResponseVideo;
   vidDate!: Date;
-  constructor(
-    public route: ActivatedRoute,
-    private sanitizer : DomSanitizer
-  ) {
 
-  }
+  constructor(public route: ActivatedRoute, private sanitizer: DomSanitizer) {}
+
   ngOnInit(): void {
-    this.itemId = this.route.snapshot.params['id']
-    this.item = history.state.data
+    this.itemId = this.route.snapshot.params['id'];
+    this.item = history.state.data;
     this.vidDate = new Date(this.item.snippet.publishedAt);
-    this.unsafeVidUrl = `https://www.youtube.com/embed/${this.item.id}`
-    this.vidUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.unsafeVidUrl);
+    this.unsafeVidUrl = `https://www.youtube.com/embed/${this.item.id}`;
+    this.vidUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+      this.unsafeVidUrl
+    );
   }
 }

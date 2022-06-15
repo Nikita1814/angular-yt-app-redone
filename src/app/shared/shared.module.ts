@@ -11,12 +11,14 @@ import { ErrorModalComponent } from './components/error-modal/error-modal.compon
     ErrorLoggerComponent,
     InputAndErrorComponent,
     AvatarSelectInputComponent,
-    ErrorModalComponent
+    ErrorModalComponent,
   ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule
+  imports: [CommonModule, ReactiveFormsModule],
+  exports: [
+    ErrorLoggerComponent,
+    InputAndErrorComponent,
+    AvatarSelectInputComponent,
+    ErrorModalComponent,
   ],
-  exports: [ErrorLoggerComponent, InputAndErrorComponent, AvatarSelectInputComponent, ErrorModalComponent]
 })
-export class SharedModule { }
+export class SharedModule {}

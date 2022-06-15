@@ -8,10 +8,10 @@ const selectSearchItemsFeature =
 
 export const selectSearchItems = createSelector(
   selectSearchItemsFeature,
-  (state: SearchItemState) : ResponseVideo[] => state.filteredSearchItems
+  (state: SearchItemState): ResponseVideo[] => state.filteredSearchItems
 );
 
 export const selectSearchItemsError = createSelector(
   selectSearchItemsFeature,
-  (state: SearchItemState) : HttpErrorResponse | null => state.searchItemsError
-)
+  (state: SearchItemState): HttpErrorResponse | null => state.searchItemsError
+);

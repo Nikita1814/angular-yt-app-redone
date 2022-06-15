@@ -37,12 +37,15 @@ export class AvatarSelectInputComponent {
   writeValue(value: string): void {
     this.selected = value ?? 'avatar-x';
   }
+
   registerOnChange(fn: any): void {
     this.onChanged = fn;
   }
+
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
+
   setDisabledState(isDisabled: boolean) {
     this.disabled = isDisabled;
   }

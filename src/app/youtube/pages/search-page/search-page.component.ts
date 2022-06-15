@@ -1,7 +1,4 @@
-import {
-  Component,
-  ChangeDetectionStrategy,
-} from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { SearchItemFacadeService } from 'src/app/redux/search-item-reducer/search-item-facade.service';
 import { ResponseVideo } from '../../models/yt-models';
 
@@ -12,9 +9,7 @@ import { ResponseVideo } from '../../models/yt-models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchPageComponent {
-
-  constructor( public searchItemsFacade: SearchItemFacadeService) {}
-
+  constructor(public searchItemsFacade: SearchItemFacadeService) {}
 
   vidById(index: number, vid: ResponseVideo) {
     return vid.id;

@@ -9,10 +9,13 @@ import { updateUser, logOut } from './auth.actions';
 })
 export class AuthFacadeService {
   user$ = this.store.select(selectUser);
+
   constructor(private store: Store) {}
+
   setUser(user: User) {
     this.store.dispatch(updateUser({ user: user }));
   }
+
   logOut() {
     this.store.dispatch(logOut());
   }

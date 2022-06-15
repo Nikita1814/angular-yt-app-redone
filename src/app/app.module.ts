@@ -3,11 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {
-  StoreModule,
-  ActionReducer,
-  MetaReducer,
-} from '@ngrx/store';
+import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
 import { searchItemsReducer } from './redux/search-item-reducer/search-item.reducer';
 import { userItemsReducer } from './redux/user-items-reducer/user-items.reducer';
 import { userReducer } from './redux/auth-reducer/auth.reducer';

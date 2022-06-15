@@ -67,16 +67,19 @@ export class UserItemFormComponent {
     ],
   });
 
-  constructor( private fb: FormBuilder, private userItemsFacade: UserItemsFacadeService ) {}
+  constructor(
+    private fb: FormBuilder,
+    private userItemsFacade: UserItemsFacadeService
+  ) {}
 
   handleSubmit() {
     if (this.cardForm.valid) {
       const userItem = {
         ...this.cardForm.value,
         id: `${Date.now()}`,
-        date: this.cardForm.value.date.toString()
+        date: this.cardForm.value.date.toString(),
       };
-      this.userItemsFacade.setUserItems( userItem as UserCardInfo )
+      this.userItemsFacade.setUserItems(userItem as UserCardInfo);
       this.exitForm();
     }
   }

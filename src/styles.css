@@ -86,11 +86,10 @@ input.ng-touched.ng-invalid {
   color: darkred;
 }
 
-a{
+a {
   text-decoration: none;
 }
-button{
+button {
   border: none;
   box-shadow: none;
 }
-

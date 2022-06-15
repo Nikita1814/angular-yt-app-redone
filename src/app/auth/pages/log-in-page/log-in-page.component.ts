@@ -15,6 +15,7 @@ export class LogInPageComponent {
     private router: Router,
     private authFacade: AuthFacadeService
   ) {}
+
   logInForm = this.fb.group({
     login: ['', { validators: [Validators.required, Validators.email] }],
     password: [
@@ -38,6 +39,7 @@ export class LogInPageComponent {
       this.router.navigateByUrl('');
     }
   }
+
   getErrorMsg(
     errorObj: ValidationErrors | null,
     errorMsgs: { [kind: string]: string }

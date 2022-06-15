@@ -6,9 +6,11 @@
     <ng-container *ngIf="cardForm.get('title')!.touched && cardForm.get('title')!.invalid">
       <app-error-logger *ngIf="cardForm.get('title')!.errors!['required']" [error]="'Please enter a title'">
       </app-error-logger>
-      <app-error-logger *ngIf="cardForm.get('title')!.errors!['minlength']" [error]="'The title needs to be at least 3 characters long '">
+      <app-error-logger *ngIf="cardForm.get('title')!.errors!['minlength']"
+        [error]="'The title needs to be at least 3 characters long '">
       </app-error-logger>
-      <app-error-logger *ngIf="cardForm.get('title')!.errors!['maxlength']" [error]="'The title must not be longer than 20 chaaracters'">
+      <app-error-logger *ngIf="cardForm.get('title')!.errors!['maxlength']"
+        [error]="'The title must not be longer than 20 chaaracters'">
       </app-error-logger>
     </ng-container>
   </div>
@@ -47,7 +49,7 @@
 
   <div class="input-grp">
     <label class="block-label" htmlFor="date"> Creation Date </label>
-    <input id="date"  type="date" formControlName="date" />
+    <input id="date" type="date" formControlName="date" />
     <ng-container *ngIf="cardForm.get('date')!.touched && cardForm.get('date')!.invalid">
       <app-error-logger *ngIf="cardForm.get('date')!.errors!['required']" [error]="'Please enter a date'">
       </app-error-logger>

@@ -5,13 +5,13 @@ import { updateUserItems } from './user-items.actions';
 import { selectUserItems } from './user-items.selector';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserItemsFacadeService {
-  userItems$ = this.store.select(selectUserItems)
-  constructor(private store: Store ) { }
+  userItems$ = this.store.select(selectUserItems);
+  constructor(private store: Store) {}
 
-  setUserItems (userItem: UserCardInfo) {
-    this.store.dispatch(updateUserItems({userItem:userItem}))
+  setUserItems(userItem: UserCardInfo) {
+    this.store.dispatch(updateUserItems({ userItem: userItem }));
   }
 }

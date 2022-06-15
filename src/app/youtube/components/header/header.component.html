@@ -4,7 +4,7 @@
       <div class="header-logo"></div>
       <form class="header-search-grp" (ngSubmit)="submitSearch()" [formGroup]="searchForm">
         <input formControlName="searchQuery" type="text" class="header-search-input" />
-        <input type="submit" value="search" class="header-search-button button-blue button-m" />
+        <button class="header-search-button button-blue button-m" type="submit"> Search </button>
       </form>
     </div>
     <button (click)="filtersVisible = !filtersVisible" class="header-sort-button page-button"></button>

@@ -20,11 +20,7 @@ export class AuthReqGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ):
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
+  ): Observable<boolean | UrlTree> {
     return this.user$.pipe(
       map((user: User) => {
         if (user.token) {

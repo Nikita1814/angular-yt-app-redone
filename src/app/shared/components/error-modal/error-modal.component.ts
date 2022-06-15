@@ -6,15 +6,14 @@ import { SearchItemFacadeService } from 'src/app/redux/search-item-reducer/searc
   selector: 'app-error-modal',
   templateUrl: './error-modal.component.html',
   styleUrls: ['./error-modal.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ErrorModalComponent {
-  @Input() error!: HttpErrorResponse
-  /*@Input() confirmFunction!: () => void
-  @Input() closingFunction!: () => void*/
-  constructor(public searchItemFacade: SearchItemFacadeService) { }
+  @Input() error!: HttpErrorResponse;
+
+  constructor(public searchItemFacade: SearchItemFacadeService) {}
 
   removeError() {
-    this.searchItemFacade.clearError()
+    this.searchItemFacade.clearError();
   }
 }
