@@ -3,18 +3,22 @@ import { CommonModule } from '@angular/common';
 import { ErrorLoggerComponent } from './components/error-logger/error-logger.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputAndErrorComponent } from './components/input-and-error/input-and-error.component';
-import { AvatarSelectInputComponent } from './avatar-select-input/avatar-select-input.component';
+import { AvatarSelectInputComponent } from './components/avatar-select-input/avatar-select-input.component';
+import { ErrorModalComponent } from './components/error-modal/error-modal.component';
 
 @NgModule({
   declarations: [
     ErrorLoggerComponent,
     InputAndErrorComponent,
-    AvatarSelectInputComponent
+    AvatarSelectInputComponent,
+    ErrorModalComponent,
   ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule
+  imports: [CommonModule, ReactiveFormsModule],
+  exports: [
+    ErrorLoggerComponent,
+    InputAndErrorComponent,
+    AvatarSelectInputComponent,
+    ErrorModalComponent,
   ],
-  exports: [ErrorLoggerComponent, InputAndErrorComponent, AvatarSelectInputComponent]
 })
-export class SharedModule { }
+export class SharedModule {}

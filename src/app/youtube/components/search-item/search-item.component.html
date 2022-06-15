@@ -1,17 +1,16 @@
 <img class="card-s-img" [src]="imgUrl" />
 <div class="card-s-info">
   <div class="info-views">
-    <i class="fa-solid fa-eye"></i>{{ vidObj.statistics.viewCount }}
+    <i class="fa-solid fa-eye"></i>{{ video.statistics.viewCount }}
   </div>
   <div class="info-likes">
-    <i class="fa-solid fa-heart"></i>{{ vidObj.statistics.likeCount }}
+    <i class="fa-solid fa-heart"></i>{{ video.statistics.likeCount }}
   </div>
   <div class="info-comments">
-    <i class="fa-solid fa-comment"></i>{{ vidObj.statistics.commentCount }}
+    <i class="fa-solid fa-comment"></i>{{ video.statistics.commentCount }}
   </div>
 </div>
-<h3 class="card-s-name">{{ vidObj.snippet.title }}</h3>
-<a id="{{ vidObj.id }}" [routerLink]="['vid', vidObj.id]" [state]="{ data: vidObj }"
-  class="card-s-more button-blue">
+<h3 class="card-s-name">{{ video.snippet.title }}</h3>
+<a id="{{ video.id }}" [routerLink]="['vid', video.id]" [state]="{ data: video }" class="card-s-more button-blue">
   More
 </a>

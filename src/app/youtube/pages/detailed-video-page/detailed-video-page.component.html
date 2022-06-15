@@ -1,16 +1,12 @@
-<iframe
-        allow="fullscreen"
-        width="730"
-        height="600"
-        [src]="vidUrl"
-      ></iframe>
+<iframe allow="fullscreen" width="730" height="600" [src]="vidUrl"></iframe>
 <div class="card-l-other">
   <div class="card-l-top">
     <h4 class="card-l-name">{{ item.snippet.title }}</h4>
     <p>{{ vidDate | date }}</p>
   </div>
   <article>
-    <p class="card-l-description">{{(item.snippet.description .length>200)? (item.snippet.description  | slice:0:400)+'..':(item.snippet.description)}}</p>
+    <p class="card-l-description">{{(item.snippet.description .length>200)? (item.snippet.description |
+      slice:0:400)+'..':(item.snippet.description)}}</p>
   </article>
   <div class="card-l-info">
     <div class="info-views">

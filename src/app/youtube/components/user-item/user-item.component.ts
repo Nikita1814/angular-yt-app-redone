@@ -4,7 +4,7 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { UserCardInfo } from '../../models/yt-models';
+import { UserCardInfo } from '../../models/you-tube-models';
 
 @Component({
   selector: 'app-user-item',
@@ -13,12 +13,12 @@ import { UserCardInfo } from '../../models/yt-models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserItemComponent implements OnInit {
-  @Input() userVid: UserCardInfo;
+  @Input() userVideo: UserCardInfo;
   imgUrl: string;
 
   constructor() {}
 
   ngOnInit(): void {
-    this.imgUrl = this.userVid.img;
+    this.imgUrl = this.userVideo.img;
   }
 }

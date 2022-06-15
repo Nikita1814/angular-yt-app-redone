@@ -9,8 +9,6 @@ import { UserItemFormComponent } from './components/user-item-form/user-item-for
 import { UserItemsPageComponent } from './pages/user-items-page/user-items-page.component';
 import { UserItemComponent } from './components/user-item/user-item.component';
 import { HttpClientModule } from '@angular/common/http';
-import { WordFilterPipe } from './pipes/word-filter.pipe';
-import { WordSortPipe } from './pipes/word-sort.pipe';
 import { YoutubeRoutingModule } from './youtube-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
@@ -25,8 +23,6 @@ import { SharedModule } from '../shared/shared.module';
     UserItemComponent,
     FiltersComponent,
     UserItemFormComponent,
-    WordFilterPipe,
-    WordSortPipe,
   ],
   imports: [
     CommonModule,

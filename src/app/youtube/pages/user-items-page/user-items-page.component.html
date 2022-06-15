@@ -7,12 +7,10 @@
   Click me!
 </button>
 <div *ngIf="formIsVisible" class="page-overlay">
-  <app-user-item-form
-    (formExit)="toggleFormVisibility()"
-    [toggleFormVisibility]="toggleFormVisibility"
-    [addCard]="addCard"
-  ></app-user-item-form>
+  <app-user-item-form (formExit)="toggleFormVisibility()" [toggleFormVisibility]="toggleFormVisibility">
+  </app-user-item-form>
 </div>
 <div className="card-list">
-  <app-user-item *ngFor="let vid of userCards$ | async; let index=index; trackBy:cardsById" [userVid]="vid"></app-user-item>
+  <app-user-item *ngFor="let vid of userItemsFacade.userItems$ | async; let index=index; trackBy:cardsById"
+    [userVid]="vid"></app-user-item>
 </div>

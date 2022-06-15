@@ -27,3 +27,12 @@
 .bdisabled {
   opacity: 0.5;
 }
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}

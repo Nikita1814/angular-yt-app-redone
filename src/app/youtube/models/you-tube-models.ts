@@ -1,4 +1,4 @@
-export interface ResponseVidInt {
+export interface ResponseVideo {
   kind: string;
   etag: string;
   id: string;
@@ -53,7 +53,7 @@ export interface ResponseVidInt {
   };
 }
 
-export interface SearchResponseVidInt {
+export interface SearchResponseVideo {
   kind: string;
   etag: string;
   id: {
@@ -111,24 +111,24 @@ export interface SearchResponseVidInt {
   };
 }
 
-export interface ResponseInt {
+export interface VideoResponse {
   kind: string;
   etag: string;
   pageInfo: {
     totalResults: number;
     resultsPerPage: number;
   };
-  items: ResponseVidInt[];
+  items: ResponseVideo[];
 }
 
-export interface SearchResponseInt {
+export interface SearchResponse {
   kind: string;
   etag: string;
   pageInfo: {
     totalResults: number;
     resultsPerPage: number;
   };
-  items: SearchResponseVidInt[];
+  items: SearchResponseVideo[];
 }
 
 export interface UserCardInfo {

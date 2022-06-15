@@ -5,7 +5,7 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
-import { ResponseVidInt } from '../../models/yt-models';
+import { ResponseVideo } from '../../models/you-tube-models';
 
 @Component({
   selector: 'app-search-item',
@@ -15,14 +15,13 @@ import { ResponseVidInt } from '../../models/yt-models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchItemComponent implements OnInit {
-  @Input() vidObj: ResponseVidInt;
+  @Input() video: ResponseVideo;
   imgUrl: string;
-  stringifiedVidObj: string;
+  stringifiedVideo: string;
   constructor() {}
 
   ngOnInit(): void {
-    this.imgUrl = this.vidObj.snippet.thumbnails.high.url;
-    this.stringifiedVidObj = JSON.stringify(this.vidObj);
+    this.imgUrl = this.video.snippet.thumbnails.high.url;
+    this.stringifiedVideo = JSON.stringify(this.video);
   }
-
 }

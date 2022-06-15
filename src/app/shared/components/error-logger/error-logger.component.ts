@@ -5,7 +5,7 @@ import { ValidationErrors } from '@angular/forms';
   selector: 'app-error-logger',
   templateUrl: './error-logger.component.html',
   styleUrls: ['./error-logger.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ErrorLoggerComponent {
   @Input() error: string;

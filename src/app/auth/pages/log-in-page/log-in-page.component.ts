@@ -1,8 +1,7 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, ValidationErrors, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
-import { updateUser } from 'src/app/redux/auth-reducer/auth.actions';
+import { AuthFacadeService } from 'src/app/redux/auth-reducer/auth-facade.service';
 
 @Component({
   selector: 'app-log-in-page',
@@ -10,12 +9,13 @@ import { updateUser } from 'src/app/redux/auth-reducer/auth.actions';
   styleUrls: ['./log-in-page.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LogInPageComponent implements OnInit {
+export class LogInPageComponent {
   constructor(
     private fb: FormBuilder,
-    private store: Store,
-    private router: Router
+    private router: Router,
+    private authFacade: AuthFacadeService
   ) {}
+
   logInForm = this.fb.group({
     login: ['', { validators: [Validators.required, Validators.email] }],
     password: [
@@ -32,12 +32,14 @@ export class LogInPageComponent implements OnInit {
 
   handleSignIn() {
     if (this.logInForm.valid) {
-      this.store.dispatch(
-        updateUser({ user: { ...this.logInForm.value, token: 'I am a token' } })
-      );
+      this.authFacade.setUser({
+        ...this.logInForm.value,
+        token: 'I am a token',
+      });
       this.router.navigateByUrl('');
     }
   }
+
   getErrorMsg(
     errorObj: ValidationErrors | null,
     errorMsgs: { [kind: string]: string }
@@ -45,7 +47,5 @@ export class LogInPageComponent implements OnInit {
     return errorObj && errorMsgs
       ? errorMsgs[`${Object.keys(errorObj)[0]}`]
       : '';
-  }
-  ngOnInit(): void {
   }
 }

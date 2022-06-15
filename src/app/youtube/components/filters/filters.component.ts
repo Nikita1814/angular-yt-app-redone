@@ -4,10 +4,8 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import { updateFilters } from 'src/app/redux/filters-reducer/filters.actions';
-import { FiltersState } from 'src/app/redux/filters-reducer/filters.reducer';
-import { PageState } from 'src/app/redux/state-related-models';
+import { SearchItemFacadeService } from 'src/app/redux/search-item-reducer/search-item-facade.service';
+import { Filters } from 'src/app/redux/search-item-reducer/search-item.reducer';
 
 @Component({
   selector: 'app-filtering-criteria',
@@ -17,17 +15,17 @@ import { PageState } from 'src/app/redux/state-related-models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FiltersComponent {
-
-
-  constructor(private fb: FormBuilder, private store: Store) {}
+  constructor(
+    private fb: FormBuilder,
+    private searchItemFacade: SearchItemFacadeService
+  ) {}
 
   filterForm = this.fb.group({
     sortType: '',
-    filterBy: ''
+    filterBy: '',
+  });
 
-  })
-
-  handleSubmit(){
-   this.store.dispatch(updateFilters(this.filterForm.value as FiltersState))
+  handleSubmit() {
+    this.searchItemFacade.setFilters(this.filterForm.value as Filters);
   }
 }

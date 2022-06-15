@@ -2,10 +2,10 @@
   <div class="header-searchbar">
     <div class="header-filter">
       <div class="header-logo"></div>
-      <input [(ngModel)]="searchString" type="text" class="header-search-input" />
-      <button (click)="submitSearch()" class="header-search-button button-blue button-m">
-        search
-      </button>
+      <form class="header-search-grp" (ngSubmit)="submitSearch()" [formGroup]="searchForm">
+        <input formControlName="searchQuery" type="text" class="header-search-input" />
+        <button class="header-search-button button-blue button-m" type="submit"> Search </button>
+      </form>
     </div>
     <button (click)="filtersVisible = !filtersVisible" class="header-sort-button page-button"></button>
   </div>
@@ -14,7 +14,7 @@
     <a class="button-blue button-m" routerLink="/user-forms"> User Cards </a>
   </div>
   <div (click)="signOut()" class="header-authorization">
-    <ng-container *ngIf="user$ | async as user">
+    <ng-container *ngIf="authFacade.user$ | async as user">
       <img class="header-auth-icon" [src]="'../../../../assets/' + user!.avatar + '.svg'" />
       <p> {{ user.login || "not logged in" }}</p>
     </ng-container>

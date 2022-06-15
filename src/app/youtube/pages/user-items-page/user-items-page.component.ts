@@ -1,8 +1,7 @@
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
-import { selectUserItems } from 'src/app/redux/user-items-reducer/user-items.selector';
-import { UserCardInfo } from '../../models/yt-models';
+import { UserItemsFacadeService } from 'src/app/redux/user-items-reducer/user-items-facade.service';
+import { UserCardInfo } from '../../models/you-tube-models';
 
 @Component({
   selector: 'app-user-items-page',
@@ -10,25 +9,15 @@ import { UserCardInfo } from '../../models/yt-models';
   styleUrls: ['./user-items-page.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserItemsPageComponent implements OnInit {
-  formIsVisible: boolean;
+export class UserItemsPageComponent {
+  formIsVisible: boolean = false;
   userCards: UserCardInfo[];
   userCards$: Observable<UserCardInfo[]>;
 
-  constructor(private store: Store) {}
-
-  ngOnInit(): void {
-    this.formIsVisible = false;
-    this.userCards = [];
-    this.userCards$ = this.store.select(selectUserItems);
-  }
+  constructor(public userItemsFacade: UserItemsFacadeService) {}
 
   toggleFormVisibility() {
     this.formIsVisible = !this.formIsVisible;
-  }
-
-  addCard(card: UserCardInfo) {
-    this.userCards.push(card);
   }
 
   cardsById(index: number, card: UserCardInfo) {
