@@ -1,15 +1,16 @@
 :host {
   box-sizing: border-box;
+  width: 300px;
+}
+.video-data{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 5%;
-  border-bottom: #2f80ed 5px solid;
   width: 263px;
-  height: 327px;
-  padding: 10px;
-  background-color: #e5e5e5;
+  height: 300px;
+  padding:10px;
+  border-radius: 5%;
 }
 .card-s-info {
   width: 100%;
@@ -20,10 +21,18 @@
   background-image: url(../../../../assets/caption.png);
   background-size: cover;
   background-repeat: no-repeat;
-  width: 223px;
+  width: 263px;
   height: 123px;
 }
 .card-s-more {
   width: 120px;
   height: 32px;
+}
+.card-buttons {
+ display: flex;
+ justify-content: space-between;
+}
+.card-s-desrcription {
+  word-break: break-all;
+  word-wrap: break-word;
 }
