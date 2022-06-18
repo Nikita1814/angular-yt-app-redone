@@ -2,7 +2,10 @@
   <form (ngSubmit)="handleSignIn()" [formGroup]="logInForm" class="log-in-form">
     <div class="input-grp">
       <label class="block-label" htmlFor="login"> Login </label>
-      <input id="login" placeholder="Login" type="email" class="input-field" formControlName="login" />
+      <nb-form-field>
+        <nb-icon nbPrefix icon="at-outline" pack="eva"></nb-icon>
+        <input nbInput fullWidth fieldSize="giant" id="login" placeholder="Login" type="email" formControlName="login" />
+      </nb-form-field>
       <ng-container *ngIf="
             logInForm.get('login')!.touched &&
             logInForm.get('login')!.invalid
@@ -15,7 +18,10 @@
     </div>
     <div class="input-grp">
       <label class="block-label" htmlFor="password"> Password </label>
-      <input id="password" placeholder="Pasword" type="password" class="input-field" formControlName="password" />
+      <nb-form-field>
+        <nb-icon nbPrefix icon="unlock-outline" pack="eva"></nb-icon>
+        <input nbInput fullWidth id="password" placeholder="Pasword" type="password" formControlName="password" />
+      </nb-form-field>
       <ng-container *ngIf="
             logInForm.get('password')!.touched &&
             logInForm.get('password')!.invalid
@@ -30,8 +36,7 @@
     <app-avatar-select-input formControlName="avatar" [controlName]="'avatar'">
     </app-avatar-select-input>
     <div class="form-btns">
-      <input [disabled]="!logInForm.valid" type="submit" value="Sign-in" (click)="handleSignIn()"
-        class="log-in button-blue" />
+      <input  nbButton status="primary" [disabled]="!logInForm.valid" type="submit" value="Sign-in" (click)="handleSignIn()" class="button-blue"/>
     </div>
   </form>
 </div>

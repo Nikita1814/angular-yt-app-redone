@@ -7,12 +7,8 @@ body {
 }
 
 .button-blue {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: white !important;
   background-color: #2f80ed !important;
-  border-radius: 5%;
 }
 
 .button-m {
@@ -69,9 +65,9 @@ body {
 }
 
 input {
-  max-width: 300px;
+  /*max-width: 300px;
   height: 40px;
-  background-color: #e0e0e0;
+  background-color: #e0e0e0;*/
 }
 
 input.ng-touched.ng-invalid {
@@ -80,6 +76,7 @@ input.ng-touched.ng-invalid {
 .block-label {
   display: block;
   text-align: center;
+  margin:16px;
 }
 
 .error-msg {

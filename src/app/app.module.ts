@@ -11,6 +11,9 @@ import { EffectsModule } from '@ngrx/effects';
 import { SearchEffects } from './redux/search-item-reducer/search-item.effects';
 import { HttpClientModule } from '@angular/common/http';
 import { localStorageSync } from 'ngrx-store-localstorage';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 const reducers = {
   searchResults: searchItemsReducer,
@@ -35,6 +38,10 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     HttpClientModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([SearchEffects]),
+    NoopAnimationsModule,
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbEvaIconsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
