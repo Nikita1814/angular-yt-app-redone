@@ -9,7 +9,7 @@ import { UserCardInfo } from '../../models/you-tube-models';
 @Component({
   selector: 'app-user-item',
   templateUrl: './user-item.component.html',
-  styleUrls: ['./user-item.component.css'],
+  styleUrls: ['./user-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserItemComponent implements OnInit {

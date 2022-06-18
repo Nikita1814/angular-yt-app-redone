@@ -10,7 +10,7 @@ import { Filters } from 'src/app/redux/search-item-reducer/search-item.reducer';
 @Component({
   selector: 'app-filtering-criteria',
   templateUrl: './filters.component.html',
-  styleUrls: ['./filters.component.css'],
+  styleUrls: ['./filters.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

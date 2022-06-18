@@ -6,7 +6,7 @@ import { UserCardInfo } from '../../models/you-tube-models';
 @Component({
   selector: 'app-user-items-page',
   templateUrl: './user-items-page.component.html',
-  styleUrls: ['./user-items-page.component.css'],
+  styleUrls: ['./user-items-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserItemsPageComponent {

@@ -16,7 +16,7 @@ import {
 @Component({
   selector: 'app-input-and-error',
   templateUrl: './input-and-error.component.html',
-  styleUrls: ['./input-and-error.component.css'],
+  styleUrls: ['./input-and-error.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

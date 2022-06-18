@@ -10,7 +10,7 @@ import { ResponseVideo } from '../../models/you-tube-models';
 @Component({
   selector: 'app-search-item',
   templateUrl: './search-item.component.html',
-  styleUrls: ['./search-item.component.css'],
+  styleUrls: ['./search-item.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
