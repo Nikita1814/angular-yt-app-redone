@@ -1,35 +1,33 @@
-:host {
+/*:host {
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 8vh;
+  width: 920px;
   padding: 1% 5%;
-}
+}*/
 
-:host div {
-  margin: 0 10px;
+.filter-form button {
+  margin-top: 16px;
 }
 .filter-input {
   width: 149px;
   height: 20px;
   margin: 1%;
 }
-.filter-btn {
+/*.filter-btn {
   width: 70px;
   display: flex;
   justify-content: center;
-}
+}*/
 
 .filter-form {
   display: flex;
+  flex-direction:column;
   padding: 1% 5%;
   width: 100%;
   justify-content: space-around;
   align-items: center;
 }
 
-.input-grp {
-  flex-direction: row;
-}

@@ -10,7 +10,7 @@
         <button nbButton status="primary" size="small" type="submit"> Search </button>
       </form>
     </div>
-    <button nbButton status="primary" size="small" (click)="filtersVisible = !filtersVisible">
+    <button nbButton status="primary" size="small" (click)="toggleSidebar()">
       <nb-icon icon="options-2-outline" pack="eva"></nb-icon>
     </button>
   </div>
@@ -25,4 +25,4 @@
     </ng-container>
   </div>
 </div>
-<app-filtering-criteria *ngIf="filtersVisible"></app-filtering-criteria>
+

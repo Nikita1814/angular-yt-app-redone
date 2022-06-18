@@ -1,9 +1,9 @@
+
 <nb-layout>
   <nb-layout-column>
     <nb-layout-header fixed>
-      <app-header> </app-header>
+      <app-header></app-header>
     </nb-layout-header>
-    <div class="main">
       <div class="search-list">
         <ng-container *ngIf="searchItemsFacade.searchItems$ | async as videos">
           <app-search-item *ngFor="let video of videos let index=index; trackBy:videoById" [video]="video">
@@ -15,6 +15,7 @@
       </div>
       <app-error-modal *ngIf="searchItemsFacade.searchError$ | async as err" [error]="err">
       </app-error-modal>
-    </div>
   </nb-layout-column>
+  <nb-sidebar fixed state="collapsed" tag="filters-sidebar"><app-filtering-criteria></app-filtering-criteria></nb-sidebar>
 </nb-layout>
+
