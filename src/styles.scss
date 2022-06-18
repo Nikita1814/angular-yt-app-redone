@@ -1,3 +1,4 @@
+
 body {
   width: 100vw;
   height: 100vh;
@@ -7,8 +8,12 @@ body {
 }
 
 .button-blue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white !important;
   background-color: #2f80ed !important;
+  border-radius: 5%;
 }
 
 .button-m {
@@ -27,6 +32,7 @@ body {
   align-items: center;
   position: relative;
   min-height: 100vh;
+  width:100vw;
 }
 .page-button {
   height: 30px;
@@ -64,15 +70,16 @@ body {
   align-items: center;
 }
 
-input {
+/*input {
   /*max-width: 300px;
   height: 40px;
-  background-color: #e0e0e0;*/
-}
+  background-color: #e0e0e0;
+}*/
 
-input.ng-touched.ng-invalid {
+/*input.ng-touched.ng-invalid {
   box-shadow: 0 0 5px 1px red;
-}
+}*/
+
 .block-label {
   display: block;
   text-align: center;

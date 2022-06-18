@@ -1,11 +1,14 @@
+<nb-layout>
+<nb-layout-column>
 <div class="main">
   <form (ngSubmit)="handleSignIn()" [formGroup]="logInForm" class="log-in-form">
-    <div class="input-grp">
+      <div class="input-grp">
       <label class="block-label" htmlFor="login"> Login </label>
       <nb-form-field>
+        <input nbInput id="login" placeholder="Login" type="email" formControlName="login" >
         <nb-icon nbPrefix icon="at-outline" pack="eva"></nb-icon>
-        <input nbInput fullWidth fieldSize="giant" id="login" placeholder="Login" type="email" formControlName="login" />
       </nb-form-field>
+    </div>
       <ng-container *ngIf="
             logInForm.get('login')!.touched &&
             logInForm.get('login')!.invalid
@@ -15,7 +18,6 @@
               email: 'Email is invalid'
             })"></app-error-logger>
       </ng-container>
-    </div>
     <div class="input-grp">
       <label class="block-label" htmlFor="password"> Password </label>
       <nb-form-field>
@@ -36,7 +38,9 @@
     <app-avatar-select-input formControlName="avatar" [controlName]="'avatar'">
     </app-avatar-select-input>
     <div class="form-btns">
-      <input  nbButton status="primary" [disabled]="!logInForm.valid" type="submit" value="Sign-in" (click)="handleSignIn()" class="button-blue"/>
+      <input  nbButton status="primary" [disabled]="!logInForm.valid" type="submit" value="Sign-in" (click)="handleSignIn()" />
     </div>
   </form>
 </div>
+</nb-layout-column>
+</nb-layout>

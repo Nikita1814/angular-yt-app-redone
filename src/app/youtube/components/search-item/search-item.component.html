@@ -10,7 +10,7 @@
     <i class="fa-solid fa-comment"></i>{{ video.statistics.commentCount }}
   </div>
 </div>
-<h3 class="card-s-name">{{ video.snippet.title }}</h3>
+<p class="card-s-name">{{ video.snippet.title }}</p>
 <a id="{{ video.id }}" [routerLink]="['vid', video.id]" [state]="{ data: video }" class="card-s-more button-blue">
   More
 </a>
