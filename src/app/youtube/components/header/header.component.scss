@@ -26,7 +26,7 @@
 .header-links {
   display: flex;
   align-items: center;
-  width: 260;
+  width: 260px;
   justify-content: space-between;
 }
 
@@ -65,9 +65,10 @@
 }
 
 .header-authorization {
+  padding:2%;
   border: 1px solid #2f80ed;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 32px;
 }

@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { YoutubeRoutingModule } from './youtube-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { NbButtonModule, NbCardModule, NbFormFieldModule, NbIconModule, NbInputModule, NbLayoutModule, NbSidebarModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,13 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
+    NbLayoutModule,
+    NbButtonModule,
+    NbInputModule,
+    NbCardModule,
+    NbFormFieldModule,
+    NbIconModule,
+    NbSidebarModule
   ],
 })
 export class YoutubeModule {}

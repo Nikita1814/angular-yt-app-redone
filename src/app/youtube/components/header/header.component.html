@@ -3,15 +3,20 @@
     <div class="header-filter">
       <div class="header-logo"></div>
       <form class="header-search-grp" (ngSubmit)="submitSearch()" [formGroup]="searchForm">
-        <input formControlName="searchQuery" type="text" class="header-search-input" />
-        <button class="header-search-button button-blue button-m" type="submit"> Search </button>
+        <nb-form-field>
+          <nb-icon nbPrefix icon="globe-outline" pack="eva"></nb-icon>
+          <input nbInput formControlName="searchQuery" type="text" />
+        </nb-form-field>
+        <button nbButton status="primary" size="small" type="submit"> Search </button>
       </form>
     </div>
-    <button (click)="filtersVisible = !filtersVisible" class="header-sort-button page-button"></button>
+    <button nbButton status="primary" size="small" (click)="filtersVisible = !filtersVisible">
+      <nb-icon icon="options-2-outline" pack="eva"></nb-icon>
+    </button>
   </div>
   <div class="header-links">
-    <a class="button-blue button-m" routerLink="/"> Home </a>
-    <a class="button-blue button-m" routerLink="/user-forms"> User Cards </a>
+    <a nbButton status="primary" size="small" routerLink="/"> Home </a>
+    <a nbButton status="primary" size="small" routerLink="/user-forms"> User Cards </a>
   </div>
   <div (click)="signOut()" class="header-authorization">
     <ng-container *ngIf="authFacade.user$ | async as user">
