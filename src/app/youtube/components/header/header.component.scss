@@ -50,7 +50,7 @@
   border: none;
 }
 .header-logo {
-  background-image: url(../../../../assets/logo.svg);
+  //background-image: url(../../../../assets/logo.svg);
   background-repeat: no-repeat;
   background-size: contain;
   width: 50px;
@@ -70,6 +70,7 @@
   justify-content: space-around;
   align-items: center;
   height: 32px;
+  cursor:pointer;
 }
 .header-auth-icon {
   width: 30px;
@@ -78,3 +79,16 @@
 .header-search-grp {
   display: flex;
 }
+
+@media screen and (max-width: 600px) {
+  .header-main{
+   flex-direction: column;
+  }
+  .header-authorization {
+    padding:0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 20px;
+  }
+ }
