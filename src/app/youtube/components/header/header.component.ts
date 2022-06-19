@@ -4,7 +4,7 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { NbSearchService, NbSidebarService } from '@nebular/theme';
+import { NbSidebarService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
 import { AuthFacadeService } from 'src/app/redux/auth-reducer/auth-facade.service';
 import { SearchItemFacadeService } from 'src/app/redux/search-item-reducer/search-item-facade.service';
@@ -27,13 +27,7 @@ export class HeaderComponent {
     public authFacade: AuthFacadeService,
     public searchItemFacade: SearchItemFacadeService,
     private sidebarService: NbSidebarService,
-    private searchService: NbSearchService
   ) {
-
-    /*this.searchService.onSearchSubmit()
-    .subscribe((data) => {
-     this.searchItemFacade.submitSearch(data.term)
-    })*/
   }
 
   signOut() {

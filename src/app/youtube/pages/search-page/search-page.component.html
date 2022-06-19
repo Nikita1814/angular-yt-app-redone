@@ -1,21 +1,21 @@
-
 <nb-layout>
   <nb-layout-column>
     <nb-layout-header fixed>
       <app-header></app-header>
     </nb-layout-header>
-      <div class="search-list">
-        <ng-container *ngIf="searchItemsFacade.searchItems$ | async as videos">
-          <app-search-item *ngFor="let video of videos let index=index; trackBy:videoById" [video]="video">
-          </app-search-item>
-          <h2 *ngIf="videos.length === 0">
-            Nothing to display, try searching for something
-          </h2>
-        </ng-container>
-      </div>
-      <app-error-modal *ngIf="searchItemsFacade.searchError$ | async as err" [error]="err">
-      </app-error-modal>
+    <div class="search-list">
+      <ng-container *ngIf="searchItemsFacade.searchItems$ | async as videos">
+        <app-search-item *ngFor="let video of videos let index=index; trackBy:videoById" [video]="video">
+        </app-search-item>
+        <h2 *ngIf="videos.length === 0">
+          Nothing to display, try searching for something
+        </h2>
+      </ng-container>
+    </div>
+    <app-error-modal *ngIf="searchItemsFacade.searchError$ | async as err" [error]="err">
+    </app-error-modal>
   </nb-layout-column>
-  <nb-sidebar fixed state="collapsed" tag="filters-sidebar"><app-filtering-criteria></app-filtering-criteria></nb-sidebar>
+  <nb-sidebar fixed state="collapsed" tag="filters-sidebar">
+    <app-filtering-criteria></app-filtering-criteria>
+  </nb-sidebar>
 </nb-layout>
-

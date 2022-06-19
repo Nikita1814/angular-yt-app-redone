@@ -1,14 +1,7 @@
 <form (ngSubmit)="handleSubmit()" [formGroup]="filterForm" class="filter-form">
   <div class="input-grp">
     <label class="block-label" htmlFor="sortType"> Sorting criteria </label>
-    <!--<select formControlName="sortType" id="sortType" class="filter-input">
-      <option value="views">Views</option>
-      <option value="date">Date</option>
-      <option value="likes">Likes</option>
-      <option value="none">None</option>
-      class="filter-btn button-blue"
-    </select> -->
-    <nb-select formControlName="sortType" id="sortType" >
+    <nb-select formControlName="sortType" id="sortType">
       <nb-option value="views">Views</nb-option>
       <nb-option value="date">Date</nb-option>
       <nb-option value="likes">Likes</nb-option>
@@ -17,9 +10,9 @@
   </div>
   <div class="input-grp">
     <label class="block-label" htmlFor="filterBy"> Filter by Phrase: </label>
-    <input nbInput  formControlName="filterBy" type="text" >
+    <input nbInput formControlName="filterBy" type="text">
   </div>
-  <button nbButton status="primary" size="small" type="submit"  >
+  <button nbButton status="primary" size="small" type="submit">
     Apply
   </button>
 </form>

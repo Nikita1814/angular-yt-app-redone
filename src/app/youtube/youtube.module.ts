@@ -12,7 +12,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { YoutubeRoutingModule } from './youtube-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
-import { NbButtonModule, NbCardModule, NbDatepickerModule, NbFormFieldModule, NbIconModule, NbInputModule, NbLayoutModule, NbSearchModule, NbSelectModule, NbSidebarModule, NbWindowModule } from '@nebular/theme';
+import {
+  NbButtonModule,
+  NbCardModule,
+  NbDatepickerModule,
+  NbFormFieldModule,
+  NbIconModule,
+  NbInputModule,
+  NbLayoutModule,
+  NbSearchModule,
+  NbSelectModule,
+  NbSidebarModule,
+  NbWindowModule,
+} from '@nebular/theme';
 
 @NgModule({
   declarations: [
@@ -42,7 +54,7 @@ import { NbButtonModule, NbCardModule, NbDatepickerModule, NbFormFieldModule, Nb
     NbSelectModule,
     NbDatepickerModule,
     NbWindowModule.forChild(),
-    NbSearchModule
+    NbSearchModule,
   ],
 })
 export class YoutubeModule {}

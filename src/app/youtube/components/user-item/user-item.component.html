@@ -1,27 +1,26 @@
 <nb-flip-card>
   <nb-card-front>
     <nb-card size="small">
-    <nb-card-body>
-      <div class="video-data">
-      <img class="card-s-img" src="{{imgUrl}}" />
-      <div class="card-s-info">
-        <p>{{ userVideo.date | date}}</p>
-      </div>
-      <p class="card-s-name">{{ userVideo.title }}</p>
-      <a nbButton status="primary" size="small" href="{{ userVideo.link }}" target="_blank" >
-        More
-      </a>
-    </div>
-    </nb-card-body>
+      <nb-card-body>
+        <div class="video-data">
+          <img class="card-s-img" src="{{imgUrl}}" />
+          <div class="card-s-info">
+            <p>{{ userVideo.date | date}}</p>
+          </div>
+          <p class="card-s-name">{{ userVideo.title }}</p>
+          <a nbButton status="primary" size="small" href="{{ userVideo.link }}" target="_blank">
+            More
+          </a>
+        </div>
+      </nb-card-body>
     </nb-card>
   </nb-card-front>
   <nb-card-back>
-  <nb-card>
-    <nb-card-body>
-      <p class="card-s-description">{{(userVideo.description .length>300)? (userVideo.description |
-        slice:0:300)+'..':(userVideo.description)}}</p>
-    </nb-card-body>
-  </nb-card>
+    <nb-card>
+      <nb-card-body>
+        <p class="card-s-description">{{(userVideo.description .length>300)? (userVideo.description |
+          slice:0:300)+'..':(userVideo.description)}}</p>
+      </nb-card-body>
+    </nb-card>
   </nb-card-back>
 </nb-flip-card>
-

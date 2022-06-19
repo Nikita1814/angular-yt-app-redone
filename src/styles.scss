@@ -16,19 +16,11 @@ body {
   border-radius: 5%;
 }
 
-.button-m {
-  width: 120px;
-  height: 32px;
-}
 
 .header-search-input {
   width: 396px;
 }
 .main {
-  /*display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;*/
   margin:0 auto;
   position: relative;
   min-height: 100vh;
@@ -70,15 +62,6 @@ body {
   align-items: center;
 }
 
-/*input {
-  /*max-width: 300px;
-  height: 40px;
-  background-color: #e0e0e0;
-}*/
-
-/*input.ng-touched.ng-invalid {
-  box-shadow: 0 0 5px 1px red;
-}*/
 
 .block-label {
   display: block;

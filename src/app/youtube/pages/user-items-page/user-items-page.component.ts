@@ -22,7 +22,6 @@ export class UserItemsPageComponent {
   ) {}
 
   toggleFormVisibility() {
-    //this.formIsVisible = !this.formIsVisible;
     this.windowService.open(UserItemFormComponent, {
       buttons: {
         minimize: true,

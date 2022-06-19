@@ -17,7 +17,8 @@
 
   <div class="input-grp">
     <label class="block-label" htmlFor="description"> Description </label>
-    <input nbInput id="description" placeholder="Description" type="text" class="input-field" formControlName="description" />
+    <input nbInput id="description" placeholder="Description" type="text" class="input-field"
+      formControlName="description" />
     <ng-container *ngIf="
         cardForm.get('description')!.touched &&
         cardForm.get('description')!.invalid
@@ -49,7 +50,7 @@
 
   <div class="input-grp">
     <label class="block-label" htmlFor="date"> Creation Date </label>
-    <input nbInput [nbDatepicker]="videoDate" formControlName="date" id="date"/>
+    <input nbInput [nbDatepicker]="videoDate" formControlName="date" id="date" />
     <nb-datepicker #videoDate></nb-datepicker>
     <ng-container *ngIf="cardForm.get('date')!.touched && cardForm.get('date')!.invalid">
       <app-error-logger *ngIf="cardForm.get('date')!.errors!['required']" [error]="'Please enter a date'">
