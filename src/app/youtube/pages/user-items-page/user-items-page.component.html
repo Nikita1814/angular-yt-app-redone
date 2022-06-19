@@ -1,16 +1,29 @@
-<div class="user-page-header">
-  <a class="button-blue button-m" routerLink="/"> Home </a>
-  <h1>Make your own personalized cards by clikcing on this button below</h1>
-</div>
-
-<button class="button-blue card-s-more" (click)="toggleFormVisibility()">
-  Click me!
-</button>
-<div *ngIf="formIsVisible" class="page-overlay">
-  <app-user-item-form (formExit)="toggleFormVisibility()" [toggleFormVisibility]="toggleFormVisibility">
-  </app-user-item-form>
-</div>
-<div className="card-list">
-  <app-user-item *ngFor="let vid of userItemsFacade.userItems$ | async; let index=index; trackBy:cardsById"
-    [userVideo]="vid"></app-user-item>
-</div>
+<nb-layout>
+  <nb-layout-column>
+    <nb-layout-header fixed>
+      <div class="user-page-header">
+        <a nbButton status="primary" size="small" routerLink="/"> Home </a>
+        <h1>Make your own personalized cards</h1>
+        <button nbButton size="large" status="success" size="small" (click)="toggleFormVisibility()">
+          Make a card
+        </button>
+      </div>
+    </nb-layout-header>
+    <div *ngIf="formIsVisible" class="page-overlay">
+      <app-user-item-form (formExit)="toggleFormVisibility()" [toggleFormVisibility]="toggleFormVisibility">
+      </app-user-item-form>
+    </div>
+    <div class="card-list">
+      <ng-container *ngIf="userItemsFacade.userItems$ | async as videos">
+        <app-user-item *ngFor="let video of videos; let index=index; trackBy:cardsById" [userVideo]="video">
+        </app-user-item>
+        <h2 *ngIf="videos.length === 0">
+          No cards to display, would you like to <button nbButton size="giant" status="success" size="small"
+            (click)="toggleFormVisibility()">
+            Make a card
+          </button> ?
+        </h2>
+      </ng-container>
+    </div>
+  </nb-layout-column>
+</nb-layout>

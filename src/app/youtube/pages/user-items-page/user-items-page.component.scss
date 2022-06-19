@@ -6,23 +6,20 @@
 }
 
 .user-page-header {
-  display: flex;
+  /*display: flex;
   align-items: center;
   justify-content: space-around;
   width: 100vw;
   height: 10%;
   color: white;
-  background-color: #2f80ed;
+  background-color: #2f80ed;*/
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
 }
 
-.search-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-}
+
 
 .bdisabled {
   opacity: 0.5;
@@ -35,4 +32,6 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
+  margin-top:4.75em;
+  width:100vw;
 }
