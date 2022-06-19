@@ -3,26 +3,26 @@
     <nb-layout-header fixed>
       <div class="user-page-header">
         <a nbButton status="primary" size="small" routerLink="/"> Home </a>
-        <h1>Make your own personalized cards</h1>
+        <h1>Make your own cards</h1>
         <button nbButton size="large" status="success" size="small" (click)="toggleFormVisibility()">
           Make a card
         </button>
       </div>
     </nb-layout-header>
-    <div *ngIf="formIsVisible" class="page-overlay">
+    <!--<div *ngIf="formIsVisible" class="page-overlay">
       <app-user-item-form (formExit)="toggleFormVisibility()" [toggleFormVisibility]="toggleFormVisibility">
       </app-user-item-form>
-    </div>
+    </div>-->
     <div class="card-list">
       <ng-container *ngIf="userItemsFacade.userItems$ | async as videos">
         <app-user-item *ngFor="let video of videos; let index=index; trackBy:cardsById" [userVideo]="video">
         </app-user-item>
-        <h2 *ngIf="videos.length === 0">
+        <h3 *ngIf="videos.length === 0">
           No cards to display, would you like to <button nbButton size="giant" status="success" size="small"
             (click)="toggleFormVisibility()">
             Make a card
           </button> ?
-        </h2>
+        </h3>
       </ng-container>
     </div>
   </nb-layout-column>

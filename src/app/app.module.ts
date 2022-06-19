@@ -12,7 +12,7 @@ import { SearchEffects } from './redux/search-item-reducer/search-item.effects';
 import { HttpClientModule } from '@angular/common/http';
 import { localStorageSync } from 'ngrx-store-localstorage';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbDatepickerModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbDatepickerModule, NbWindowModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 const reducers = {
@@ -44,6 +44,7 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     NbLayoutModule,
     NbEvaIconsModule,
     NbDatepickerModule.forRoot(),
+    NbWindowModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

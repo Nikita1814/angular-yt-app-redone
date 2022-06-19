@@ -15,7 +15,7 @@
   background-color: #2f80ed;*/
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100vw;
 }
 
@@ -34,4 +34,10 @@
   gap: 30px;
   margin-top:4.75em;
   width:100vw;
+}
+
+@media screen and (max-width: 600px) {
+ h1{
+  display:none;
+ }
 }
