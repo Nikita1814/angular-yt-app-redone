@@ -19,7 +19,6 @@
   justify-content: space-around;
 }
 
-
 .header-links {
   display: flex;
   align-items: center;
@@ -43,7 +42,6 @@
   margin-right: 10px;
 }
 
-
 .header-logo {
   background-repeat: no-repeat;
   background-size: contain;
@@ -59,12 +57,12 @@
 }
 
 .header-authorization {
-  padding:1.5%;
+  padding: 1.5%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 32px;
-  cursor:pointer;
+  cursor: pointer;
 }
 .header-auth-icon {
   width: 30px;
@@ -75,14 +73,14 @@
 }
 
 @media screen and (max-width: 600px) {
-  .header-main{
-   flex-direction: column;
+  .header-main {
+    flex-direction: column;
   }
   .header-authorization {
-    padding:0;
+    padding: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 20px;
   }
- }
+}

@@ -22,7 +22,7 @@ export class DetailedVideoPageComponent implements OnInit {
   item!: ResponseVideo;
   vidDate!: Date;
 
-  constructor(public route: ActivatedRoute, private sanitizer: DomSanitizer) {}
+  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
     this.itemId = this.route.snapshot.params['id'];

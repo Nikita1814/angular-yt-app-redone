@@ -6,13 +6,13 @@
           <img class="card-s-img" [src]="imgUrl" />
           <div class="card-s-info">
             <div class="info-views">
-              <i class="fa-solid fa-eye"></i>{{ video.statistics.viewCount }}
+              <nb-icon nbPrefix icon="eye-outline"></nb-icon>{{ video.statistics.viewCount }}
             </div>
             <div class="info-likes">
-              <i class="fa-solid fa-heart"></i>{{ video.statistics.likeCount }}
+              <nb-icon nbPrefix icon="heart-outline"></nb-icon>{{ video.statistics.likeCount }}
             </div>
             <div class="info-comments">
-              <i class="fa-solid fa-comment"></i>{{ video.statistics.commentCount }}
+              <nb-icon nbPrefix icon="message-square-outline"></nb-icon> {{ video.statistics.commentCount }}
             </div>
           </div>
           <p class="card-s-name">{{ video.snippet.title }}</p>

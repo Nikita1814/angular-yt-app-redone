@@ -3,7 +3,7 @@
   <ng-container *ngFor="let avatar of avatars">
     <div (click)="selectAvatar(avatar)">
       <img class="avatar" [class.selected]="!disabled && selected === avatar"
-        [src]="'../../../assets/' + avatar + '.svg'" />
+        [src]="'/assets/' + avatar + '.svg'" />
     </div>
   </ng-container>
 </div>

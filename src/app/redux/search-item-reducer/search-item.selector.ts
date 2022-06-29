@@ -9,9 +9,10 @@ const selectSearchItemsFeature =
 
 export const selectSearchItems = createSelector(
   selectSearchItemsFeature,
-  (state: SearchItemState): ResponseVideo[] => state.searchItems
-  .filter((el) => el.snippet.title.toLowerCase().includes(state.filterBy))
-  .sort(sortFuncs[state.sortType]),
+  (state: SearchItemState): ResponseVideo[] =>
+    state.searchItems
+      .filter((el) => el.snippet.title.toLowerCase().includes(state.filterBy))
+      .sort(sortFuncs[state.sortType])
 );
 
 export const selectSearchItemsError = createSelector(

@@ -44,8 +44,10 @@ export class LogInPageComponent {
     errorObj: ValidationErrors | null,
     errorMsgs: { [kind: string]: string }
   ) {
-    return errorObj && errorMsgs
-      ? errorMsgs[`${Object.keys(errorObj)[0]}`]
-      : '';
+    if (errorObj && errorMsgs) {
+      return errorMsgs[`${Object.keys(errorObj)[0]}`];
+    } else {
+      return '';
+    }
   }
 }

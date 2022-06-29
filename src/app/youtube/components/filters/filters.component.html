@@ -2,10 +2,8 @@
   <div class="input-grp">
     <label class="block-label" htmlFor="sortType"> Sorting criteria </label>
     <nb-select formControlName="sortType" id="sortType">
-      <nb-option value="views">Views</nb-option>
-      <nb-option value="date">Date</nb-option>
-      <nb-option value="likes">Likes</nb-option>
-      <nb-option value="none">None</nb-option>
+      <nb-option *ngFor="let option of options let index=index; trackBy:optionByValue" value="option.value">
+        {{option.title}}</nb-option>
     </nb-select>
   </div>
   <div class="input-grp">
