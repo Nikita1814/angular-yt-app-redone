@@ -4,22 +4,31 @@
       <nb-card-body>
         <div class="video-data">
           <img class="card-s-img" [src]="imgUrl" />
-          <div class="card-s-info">
-            <div class="info-views">
-              <nb-icon nbPrefix icon="eye-outline"></nb-icon>{{ video.statistics.viewCount }}
+          <ng-container *ngIf="(statistics && statistics.viewCount)">
+            <div class="card-s-info">
+              <div class="info-views">
+                <nb-icon nbPrefix icon="eye-outline"></nb-icon>{{ statistics.viewCount }}
+              </div>
+              <div class="info-likes">
+                <nb-icon nbPrefix icon="heart-outline"></nb-icon>{{ statistics.likeCount }}
+              </div>
+              <div class="info-comments">
+                <nb-icon nbPrefix icon="message-square-outline"></nb-icon> {{ statistics.commentCount }}
+              </div>
             </div>
-            <div class="info-likes">
-              <nb-icon nbPrefix icon="heart-outline"></nb-icon>{{ video.statistics.likeCount }}
-            </div>
-            <div class="info-comments">
-              <nb-icon nbPrefix icon="message-square-outline"></nb-icon> {{ video.statistics.commentCount }}
-            </div>
-          </div>
-          <p class="card-s-name">{{ video.snippet.title }}</p>
-          <a nbButton status="primary" size="tiny" id="{{ video.id }}" [routerLink]="['vid', video.id]"
-            [state]="{ data: video }">
-            Watch
-          </a>
+          </ng-container>
+          <p class="card-s-name">{{title}}</p>
+          <ng-container *ngIf="link.length === 0">
+            <a nbButton status="primary" size="tiny" id="{{ video.id }}" [routerLink]="['vid', video.id]"
+              [state]="{ data: video }">
+              Watch
+            </a>
+          </ng-container>
+          <ng-container *ngIf="link.length > 0">
+            <a nbButton status="primary" size="small" href="{{video.link }}" target="_blank">
+              More
+            </a>
+          </ng-container>
         </div>
       </nb-card-body>
     </nb-card>
@@ -27,8 +36,7 @@
   <nb-card-back>
     <nb-card size="small">
       <nb-card-header>
-        <p class="card-s-description">{{(video.snippet.description .length>300)? (video.snippet.description |
-          slice:0:300)+'..':(video.snippet.description)}}</p>
+        <p class="card-s-description">{{description}}</p>
       </nb-card-header>
       <nb-card-body>
       </nb-card-body>

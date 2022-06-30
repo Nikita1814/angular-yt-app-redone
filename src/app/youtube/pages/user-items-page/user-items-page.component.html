@@ -11,8 +11,8 @@
     </nb-layout-header>
     <div class="card-list">
       <ng-container *ngIf="userItemsFacade.userItems$ | async as videos">
-        <app-user-item *ngFor="let video of videos; let index=index; trackBy:cardsById" [userVideo]="video">
-        </app-user-item>
+        <app-search-item *ngFor="let video of videos let index=index; trackBy:videoById" [video]="video">
+        </app-search-item>
         <h3 *ngIf="videos.length === 0">
           No cards to display, would you like to <button nbButton size="giant" status="success"
             (click)="toggleFormVisibility()">

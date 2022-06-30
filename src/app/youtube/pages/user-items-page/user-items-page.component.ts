@@ -32,7 +32,7 @@ export class UserItemsPageComponent {
     });
   }
 
-  cardsById(index: number, card: UserCardInfo) {
+  videoById(index: number, card: UserCardInfo) {
     return card.id;
   }
 }

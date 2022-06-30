@@ -7,7 +7,6 @@ import { SearchItemComponent } from './components/search-item/search-item.compon
 import { FiltersComponent } from './components/filters/filters.component';
 import { UserItemFormComponent } from './components/user-item-form/user-item-form.component';
 import { UserItemsPageComponent } from './pages/user-items-page/user-items-page.component';
-import { UserItemComponent } from './components/user-item/user-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { YoutubeRoutingModule } from './youtube-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -33,7 +32,6 @@ import {
     DetailedVideoPageComponent,
     HeaderComponent,
     SearchItemComponent,
-    UserItemComponent,
     FiltersComponent,
     UserItemFormComponent,
   ],
