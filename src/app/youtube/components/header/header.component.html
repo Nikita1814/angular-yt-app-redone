@@ -1,23 +1,27 @@
 <div class="header-main">
   <div class="header-searchbar">
     <div class="header-filter">
-      <div class="header-logo"></div>
+      <img src="/assets/logo.svg" class="header-logo" />
       <form class="header-search-grp" (ngSubmit)="submitSearch()" [formGroup]="searchForm">
-        <input formControlName="searchQuery" type="text" class="header-search-input" />
-        <button class="header-search-button button-blue button-m" type="submit"> Search </button>
+        <nb-form-field size="tiny">
+          <nb-icon nbPrefix icon="globe-outline"></nb-icon>
+          <input nbInput formControlName="searchQuery" type="text" size="tiny" />
+        </nb-form-field>
+        <button nbButton status="primary" size="tiny" type="submit"> Search </button>
       </form>
     </div>
-    <button (click)="filtersVisible = !filtersVisible" class="header-sort-button page-button"></button>
+    <button nbButton status="primary" size="tiny" (click)="toggleSidebar()">
+      <nb-icon icon="options-2-outline"></nb-icon>
+    </button>
   </div>
   <div class="header-links">
-    <a class="button-blue button-m" routerLink="/"> Home </a>
-    <a class="button-blue button-m" routerLink="/user-forms"> User Cards </a>
+    <a nbButton status="primary" size="tiny" routerLink="/"> Home </a>
+    <a nbButton status="primary" size="tiny" routerLink="/user-forms"> User Cards </a>
   </div>
   <div (click)="signOut()" class="header-authorization">
     <ng-container *ngIf="authFacade.user$ | async as user">
-      <img class="header-auth-icon" [src]="'../../../../assets/' + user!.avatar + '.svg'" />
+      <img class="header-auth-icon" [src]="'/assets/' + user!.avatar + '.svg'" />
       <p> {{ user.login || "not logged in" }}</p>
     </ng-container>
   </div>
 </div>
-<app-filtering-criteria *ngIf="filtersVisible"></app-filtering-criteria>

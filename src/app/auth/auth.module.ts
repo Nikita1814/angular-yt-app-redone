@@ -4,6 +4,7 @@ import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { AuthRoutingModule } from './auth-routing.module';
+import { NbButtonModule, NbFormFieldModule, NbIconModule, NbInputModule, NbLayoutModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [LogInPageComponent],
@@ -13,6 +14,11 @@ import { AuthRoutingModule } from './auth-routing.module';
     ReactiveFormsModule,
     SharedModule,
     AuthRoutingModule,
+    NbInputModule,
+    NbFormFieldModule,
+    NbButtonModule,
+    NbIconModule,
+    NbLayoutModule
   ],
 })
 export class AuthModule {}

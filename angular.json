@@ -27,7 +27,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/@nebular/theme/styles/prebuilt/default.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -112,6 +113,11 @@
     }
   },
   "defaultProject": "angular-yt-app-redone",
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
   "cli": {
     "defaultCollection": "@angular-eslint/schematics"
   }

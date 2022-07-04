@@ -13,7 +13,7 @@ import { UserCardInfo } from '../../models/you-tube-models';
 @Component({
   selector: 'app-user-item-form',
   templateUrl: './user-item-form.component.html',
-  styleUrls: ['./user-item-form.component.css'],
+  styleUrls: ['./user-item-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserItemFormComponent {

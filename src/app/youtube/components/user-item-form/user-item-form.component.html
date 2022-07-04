@@ -1,8 +1,7 @@
 <form (ngSubmit)="handleSubmit()" [formGroup]="cardForm" class="card-form">
-  <button (click)="exitForm()" class="button-blue form-exit">X</button>
   <div class="input-grp">
     <label class="block-label" htmlFor="title"> Title </label>
-    <input id="title" placeholder="Title" type="text" class="input-field" formControlName="title" />
+    <input nbInput id="title" placeholder="Title" type="text" class="input-field" formControlName="title" />
     <ng-container *ngIf="cardForm.get('title')!.touched && cardForm.get('title')!.invalid">
       <app-error-logger *ngIf="cardForm.get('title')!.errors!['required']" [error]="'Please enter a title'">
       </app-error-logger>
@@ -17,7 +16,8 @@
 
   <div class="input-grp">
     <label class="block-label" htmlFor="description"> Description </label>
-    <input id="description" placeholder="Description" type="text" class="input-field" formControlName="description" />
+    <input nbInput id="description" placeholder="Description" type="text" class="input-field"
+      formControlName="description" />
     <ng-container *ngIf="
         cardForm.get('description')!.touched &&
         cardForm.get('description')!.invalid
@@ -29,7 +29,7 @@
 
   <div class="input-grp">
     <label class="block-label" htmlFor="img"> Image Link </label>
-    <input id="img" placeholder="Image Link" type="text" class="input-field" formControlName="img" />
+    <input nbInput id="img" placeholder="Image Link" type="text" class="input-field" formControlName="img" />
     <ng-container *ngIf="cardForm.get('img')!.touched && cardForm.get('img')!.invalid">
       <app-error-logger *ngIf="cardForm.get('img')!.errors!['imgLinkInvalid']" [error]="'The image link is invalid'">
       </app-error-logger>
@@ -40,7 +40,7 @@
 
   <div class="input-grp">
     <label class="block-label" htmlFor="link"> Video Link </label>
-    <input id="link" placeholder="Video Link" type="text" class="input-field" formControlName="link" />
+    <input nbInput id="link" placeholder="Video Link" type="text" class="input-field" formControlName="link" />
     <ng-container *ngIf="cardForm.get('link')!.touched && cardForm.get('link')!.invalid">
       <app-error-logger *ngIf="cardForm.get('link')!.errors!['required']" [error]="'Please enter a video link'">
       </app-error-logger>
@@ -49,7 +49,8 @@
 
   <div class="input-grp">
     <label class="block-label" htmlFor="date"> Creation Date </label>
-    <input id="date" type="date" formControlName="date" />
+    <input nbInput [nbDatepicker]="videoDate" formControlName="date" id="date" />
+    <nb-datepicker #videoDate></nb-datepicker>
     <ng-container *ngIf="cardForm.get('date')!.touched && cardForm.get('date')!.invalid">
       <app-error-logger *ngIf="cardForm.get('date')!.errors!['required']" [error]="'Please enter a date'">
       </app-error-logger>
@@ -58,5 +59,5 @@
     </ng-container>
   </div>
 
-  <input [disabled]="!cardForm.valid" type="submit" value="Submit" class="button-blue button-m" />
+  <button nbButton status="success" size="large" [disabled]="!cardForm.valid" type="submit"> Submit</button>
 </form>

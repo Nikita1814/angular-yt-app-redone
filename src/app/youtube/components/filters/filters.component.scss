@@ -1,0 +1,17 @@
+.filter-form button {
+  margin-top: 16px;
+}
+.filter-input {
+  width: 149px;
+  height: 20px;
+  margin: 1%;
+}
+
+.filter-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1% 5%;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}

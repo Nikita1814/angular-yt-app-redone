@@ -1,21 +1,21 @@
-:host {
+.card-l {
   display: flex;
   background-color: #e5e5e5;
-  width: 1000px;
+  max-width: 640px;
   height: 600px;
 }
 .card-l p {
   font-size: 12px;
 }
 .card-l-img {
-  width: 730px;
+  width: 320px;
   height: 100%;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
 }
 .card-l-other {
-  width: 630px;
+  width: 320px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -29,3 +29,23 @@
   display: flex;
   justify-content: space-around;
 }
+
+:host{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+  width:100vw;
+}
+
+@media screen and (max-width: 600px) {
+  .card-l {
+    display: flex;
+    flex-direction: column;
+    background-color: #e5e5e5;
+    max-width: 320px;
+    height: 600px;
+  }
+ }

@@ -11,7 +11,7 @@ import { ResponseVideo } from '../../models/you-tube-models';
 @Component({
   selector: 'app-detailed-video-page',
   templateUrl: './detailed-video-page.component.html',
-  styleUrls: ['./detailed-video-page.component.css'],
+  styleUrls: ['./detailed-video-page.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -22,7 +22,7 @@ export class DetailedVideoPageComponent implements OnInit {
   item!: ResponseVideo;
   vidDate!: Date;
 
-  constructor(public route: ActivatedRoute, private sanitizer: DomSanitizer) {}
+  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
     this.itemId = this.route.snapshot.params['id'];

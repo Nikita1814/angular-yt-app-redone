@@ -6,6 +6,7 @@
 .avatar {
   width: 70px;
   height: 70px;
+  transition: border 0.5s;
 }
 .selected {
   border: 5px solid #2f80ed;

@@ -9,7 +9,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 @Component({
   selector: 'app-avatar-select-input',
   templateUrl: './avatar-select-input.component.html',
-  styleUrls: ['./avatar-select-input.component.css'],
+  styleUrls: ['./avatar-select-input.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {

@@ -1,16 +1,16 @@
 <form (ngSubmit)="handleSubmit()" [formGroup]="filterForm" class="filter-form">
   <div class="input-grp">
     <label class="block-label" htmlFor="sortType"> Sorting criteria </label>
-    <select formControlName="sortType" id="sortType" class="filter-input">
-      <option value="views">Views</option>
-      <option value="date">Date</option>
-      <option value="likes">Likes</option>
-      <option value="none">None</option>
-    </select>
+    <nb-select formControlName="sortType" id="sortType">
+      <nb-option *ngFor="let option of options let index=index; trackBy:optionByValue" value="option.value">
+        {{option.title}}</nb-option>
+    </nb-select>
   </div>
   <div class="input-grp">
     <label class="block-label" htmlFor="filterBy"> Filter by Phrase: </label>
-    <input formControlName="filterBy" type="text" class="filter-input">
-    <input type="submit" value="apply" class="filter-btn button-blue">
+    <input nbInput formControlName="filterBy" type="text">
   </div>
+  <button nbButton status="primary" size="small" type="submit">
+    Apply
+  </button>
 </form>

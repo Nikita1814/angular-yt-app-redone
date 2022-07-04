@@ -6,7 +6,7 @@ import { AuthFacadeService } from 'src/app/redux/auth-reducer/auth-facade.servic
 @Component({
   selector: 'app-log-in-page',
   templateUrl: './log-in-page.component.html',
-  styleUrls: ['./log-in-page.component.css'],
+  styleUrls: ['./log-in-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LogInPageComponent {
@@ -44,8 +44,10 @@ export class LogInPageComponent {
     errorObj: ValidationErrors | null,
     errorMsgs: { [kind: string]: string }
   ) {
-    return errorObj && errorMsgs
-      ? errorMsgs[`${Object.keys(errorObj)[0]}`]
-      : '';
+    if (errorObj && errorMsgs) {
+      return errorMsgs[`${Object.keys(errorObj)[0]}`];
+    } else {
+      return '';
+    }
   }
 }

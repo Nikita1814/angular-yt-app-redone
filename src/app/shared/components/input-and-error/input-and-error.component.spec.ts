@@ -8,9 +8,8 @@ describe('InputAndErrorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InputAndErrorComponent ]
-    })
-    .compileComponents();
+      declarations: [InputAndErrorComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

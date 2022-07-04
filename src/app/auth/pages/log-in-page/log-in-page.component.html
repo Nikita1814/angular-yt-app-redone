@@ -1,37 +1,45 @@
-<div class="main">
-  <form (ngSubmit)="handleSignIn()" [formGroup]="logInForm" class="log-in-form">
-    <div class="input-grp">
-      <label class="block-label" htmlFor="login"> Login </label>
-      <input id="login" placeholder="Login" type="email" class="input-field" formControlName="login" />
-      <ng-container *ngIf="
+<nb-layout>
+  <nb-layout-column>
+    <div class="main">
+      <form (ngSubmit)="handleSignIn()" [formGroup]="logInForm" class="log-in-form">
+        <div class="input-grp">
+          <label class="block-label" htmlFor="login"> Login </label>
+          <nb-form-field>
+            <input nbInput id="login" placeholder="Login" type="email" formControlName="login">
+            <nb-icon nbPrefix icon="at-outline"></nb-icon>
+          </nb-form-field>
+        </div>
+        <ng-container *ngIf="
             logInForm.get('login')!.touched &&
             logInForm.get('login')!.invalid
           ">
-        <app-error-logger *ngIf="logInForm.get('login')!.errors" [error]="getErrorMsg( logInForm.get('login')!.errors, {
+          <app-error-logger *ngIf="logInForm.get('login')!.errors" [error]="getErrorMsg( logInForm.get('login')!.errors, {
               required: 'Please enter an email',
               email: 'Email is invalid'
             })"></app-error-logger>
-      </ng-container>
-    </div>
-    <div class="input-grp">
-      <label class="block-label" htmlFor="password"> Password </label>
-      <input id="password" placeholder="Pasword" type="password" class="input-field" formControlName="password" />
-      <ng-container *ngIf="
+        </ng-container>
+        <div class="input-grp">
+          <label class="block-label" htmlFor="password"> Password </label>
+          <nb-form-field>
+            <nb-icon nbPrefix icon="unlock-outline"></nb-icon>
+            <input nbInput fullWidth id="password" placeholder="Pasword" type="password" formControlName="password" />
+          </nb-form-field>
+          <ng-container *ngIf="
             logInForm.get('password')!.touched &&
             logInForm.get('password')!.invalid
           ">
-        <app-error-logger *ngIf="logInForm.get('password')!.errors" [error]="getErrorMsg( logInForm.get('password')!.errors, {
+            <app-error-logger *ngIf="logInForm.get('password')!.errors" [error]="getErrorMsg( logInForm.get('password')!.errors, {
               required: 'Please enter a password',
               pattern:
                 'Your password is not strong enough,the passsword must contain at least 8 characters including: uppercase, lowercase, letters, numbers, special characters (! @ # ? )'
             })"></app-error-logger>
-      </ng-container>
+          </ng-container>
+        </div>
+        <app-avatar-select-input formControlName="avatar" [controlName]="'avatar'">
+        </app-avatar-select-input>
+        <input nbButton status="primary" [disabled]="!logInForm.valid" type="submit" value="Sign-in"
+          (click)="handleSignIn()" />
+      </form>
     </div>
-    <app-avatar-select-input formControlName="avatar" [controlName]="'avatar'">
-    </app-avatar-select-input>
-    <div class="form-btns">
-      <input [disabled]="!logInForm.valid" type="submit" value="Sign-in" (click)="handleSignIn()"
-        class="log-in button-blue" />
-    </div>
-  </form>
-</div>
+  </nb-layout-column>
+</nb-layout>

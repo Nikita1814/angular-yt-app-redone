@@ -5,13 +5,13 @@ import { SearchItemFacadeService } from 'src/app/redux/search-item-reducer/searc
 @Component({
   selector: 'app-error-modal',
   templateUrl: './error-modal.component.html',
-  styleUrls: ['./error-modal.component.css'],
+  styleUrls: ['./error-modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ErrorModalComponent {
   @Input() error!: HttpErrorResponse;
 
-  constructor(public searchItemFacade: SearchItemFacadeService) {}
+  constructor(private searchItemFacade: SearchItemFacadeService) {}
 
   removeError() {
     this.searchItemFacade.clearError();

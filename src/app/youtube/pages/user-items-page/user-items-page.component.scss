@@ -8,20 +8,8 @@
 .user-page-header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100vw;
-  height: 10%;
-  color: white;
-  background-color: #2f80ed;
-}
-
-.search-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
 }
 
 .bdisabled {
@@ -35,4 +23,12 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
+  margin-top: 4.75em;
+  width: 100vw;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    display: none;
+  }
 }

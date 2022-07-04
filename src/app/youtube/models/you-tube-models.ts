@@ -2,6 +2,7 @@ export interface ResponseVideo {
   kind: string;
   etag: string;
   id: string;
+  link?:string
   snippet: {
     publishedAt: string;
     channelId: string;
@@ -44,15 +45,16 @@ export interface ResponseVideo {
     };
     defaultAudioLanguage: string;
   };
-  statistics: {
-    viewCount: string;
-    likeCount: string;
-    dislikeCount: string;
-    favoriteCount: string;
-    commentCount: string;
-  };
+  statistics: Statistics
 }
 
+export interface Statistics {
+  viewCount: string;
+  likeCount: string;
+  dislikeCount: string;
+  favoriteCount: string;
+  commentCount: string;
+}
 export interface SearchResponseVideo {
   kind: string;
   etag: string;
@@ -138,4 +140,15 @@ export interface UserCardInfo {
   img: string;
   link: string;
   date: string;
+}
+
+export interface UserCardInfo2{
+  snippet: {
+    id: string;
+    title: string;
+    description: string;
+    img: string;
+    link: string;
+    date: string;
+  }
 }

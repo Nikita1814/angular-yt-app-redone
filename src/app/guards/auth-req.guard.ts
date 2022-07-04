@@ -15,7 +15,7 @@ import { selectUser } from '../redux/auth-reducer/auth.selector';
   providedIn: 'root',
 })
 export class AuthReqGuard implements CanActivate {
-  constructor(private store: Store, public router: Router) {}
+  constructor(private store: Store, private router: Router) {}
   user$ = this.store.select(selectUser);
   canActivate(
     route: ActivatedRouteSnapshot,

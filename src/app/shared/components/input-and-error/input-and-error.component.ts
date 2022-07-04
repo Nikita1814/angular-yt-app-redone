@@ -16,7 +16,7 @@ import {
 @Component({
   selector: 'app-input-and-error',
   templateUrl: './input-and-error.component.html',
-  styleUrls: ['./input-and-error.component.css'],
+  styleUrls: ['./input-and-error.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -46,9 +46,11 @@ export class InputAndErrorComponent implements ControlValueAccessor {
   }
 
   getMsg(): string {
-    return this.errorsObj && this.errorMsgs
-      ? this.errorMsgs[`${Object.keys(this.errorsObj)[0]}`]
-      : '';
+    if (this.errorsObj && this.errorMsgs) {
+      return this.errorMsgs[`${Object.keys(this.errorsObj)[0]}`];
+    } else {
+      return '';
+    }
   }
 
   registerOnTouched(fn: unknown): void {

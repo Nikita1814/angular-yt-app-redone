@@ -22,14 +22,7 @@ body {
 .header-search-input {
   width: 396px;
 }
-.main {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
+
 .page-button {
   height: 30px;
   width: 30px;
@@ -66,15 +59,6 @@ body {
   align-items: center;
 }
 
-input {
-  max-width: 300px;
-  height: 40px;
-  background-color: #e0e0e0;
-}
-
-input.ng-touched.ng-invalid {
-  box-shadow: 0 0 5px 1px red;
-}
 .block-label {
   display: block;
   text-align: center;
